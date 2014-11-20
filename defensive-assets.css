@@ -1,0 +1,53 @@
+a#install-button{
+	width:92px;
+	height:14px;
+	padding:2px 4px;
+	border:1.5px solid rgba(0,0,0,0.38);
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border-radius:2px;
+	top:-15px;
+	right:2px;
+	margin-right:1px;
+	position:fixed;z-index:99999999;
+	background:url('https://secure.static.tumblr.com/tpqedpr/cQ1mbwb60/de.png') rgba(0,0,0,.4) no-repeat;
+}
+#install-theme-text{
+	float:right;
+	font:12px Arial;
+	text-shadow:1px 1px 1px rgba(0,0,0,0.08);
+	color:white;
+}
+a#install-button:hover{
+	background:url('https://secure.static.tumblr.com/tpqedpr/cQ1mbwb60/de.png') rgba(43,43,43,.4) no-repeat;
+}
+iframe#tumblr_controls{
+	position:fixed;
+	right:105px;
+}
+/**** Transitions for Masonry ****/
+
+.masonry,
+.masonry .masonry-brick {
+	-webkit-transition-duration: 0.4s;
+		-moz-transition-duration: 0.4s;
+			-ms-transition-duration: 0.4s;
+			-o-transition-duration: 0.4s;
+					transition-duration: 0.4s;
+}
+
+.masonry {
+	-webkit-transition-property: height, width;
+		-moz-transition-property: height, width;
+			-ms-transition-property: height, width;
+			-o-transition-property: height, width;
+					transition-property: height, width;
+}
+
+.masonry .masonry-brick {
+	-webkit-transition-property: left, right, top;
+		-moz-transition-property: left, right, top;
+			-ms-transition-property: left, right, top;
+			-o-transition-property: left, right, top;
+					transition-property: left, right, top;
+}
