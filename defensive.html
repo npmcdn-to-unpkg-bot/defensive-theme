@@ -406,309 +406,309 @@ li.chat{
 
 <body>
 
-<div class="left">
+  <div class="left">
 
-  <div class="sidebar">
-    <div class="sideguts">
+    <div class="sidebar">
+      <div class="sideguts">
 
-        {block:ifShowTitleOnBlog}
-            {block:ShowTitle}
-                <div class="side-title"><a href="/">{Title}</a></div>
-            {/block:ShowTitle}
-        {/block:ifShowTitleOnBlog}
-        {block:ShowAvatar}
-            <a class="home-side-link" href="/">
-                <div class="sideimg sideimg-{AvatarShape}">
-                    <img src="{PortraitURL-128}" width="100%" />
-                </div>
-            </a>
-        {/block:ShowAvatar}
-        {block:ShowDescription}
-            <span class="desc">
-                {Description}
-                {block:ifDescriptionUnderline}
-                    <hr/>
-                {/block:ifDescriptionUnderline}
-            </span>
-        {/block:ShowDescription}
-        <div id="nav">
-            {block:ifHome}
-                <a class="nav" href="/">{text:Home Title}</a>
-            {/block:ifHome}
-            {block:AskEnabled}
-                <a class="nav" href="/ask">{AskLabel}</a>
-            {/block:AskEnabled}
-            {block:ifLinkOneTitle}
-                <a class="nav" href="{text:Link One}">{text:Link One Title}</a>
-            {/block:ifLinkOneTitle}
-            {block:ifLinkTwoTitle}
-                <a class="nav" href="{text:Link Two}">{text:Link Two Title}</a>
-            {/block:ifLinkTwoTitle}
-            {block:ifLinkThreeTitle}
-                <a class="nav" href="{text:Link Three}">{text:Link Three Title}</a>
-            {/block:ifLinkThreeTitle}
-            {block:ifLinkFourTitle}
-                <a class="nav" href="{text:Link Four}">{text:Link Four Title}</a>
-            {/block:ifLinkFourTitle}
-            {block:ifLinkFiveTitle}
-                <a class="nav" href="{text:Link Five}">{text:Link Five Title}</a>
-            {/block:ifLinkFiveTitle}
-            {block:HasPages}
-                {block:Pages}
-                <a class="nav" href="{URL}" title="{Label}">{Label}</a>
-                {/block:Pages}
-            {/block:HasPages}
-            <span id="inner"></span>
-        </div>
-    </div>
-    {block:ifDescPagination}
-        {block:ifnotInfiniteScroll}
-            {block:Pagination}
-            <div id="pagination" class="desc-pagination">
-
-                  {block:JumpPagination length="5"}
-                        {block:CurrentPage}
-                              <span class="current_page">{PageNumber}</span>
-                        {/block:CurrentPage}
-
-                        {block:JumpPage}
-                              <a class="jump_page" href="{URL}">{PageNumber}</a>
-                        {/block:JumpPage}
-                  {/block:JumpPagination}
-                  <br/>
-                  <div class="buttons-pagination">
-                      {block:PreviousPage}
-                      <span class="prev-nav-button">
-                            <a href="{PreviousPage}">&#8592; Previous | </a>
-                      </span>
-                      {/block:PreviousPage}
-
-                      {block:NextPage}
-                      <span class="next-nav-button">
-                            <a href="{NextPage}">Next &#8594;</a>
-                      </span>
-                      {/block:NextPage}
+          {block:ifShowTitleOnBlog}
+              {block:ShowTitle}
+                  <div class="side-title"><a href="/">{Title}</a></div>
+              {/block:ShowTitle}
+          {/block:ifShowTitleOnBlog}
+          {block:ShowAvatar}
+              <a class="home-side-link" href="/">
+                  <div class="sideimg sideimg-{AvatarShape}">
+                      <img src="{PortraitURL-128}" width="100%" />
                   </div>
-            </div>
-            {/block:Pagination}
-        {/block:ifnotInfiniteScroll}
-        {block:ifPermalinkPagination}
-            {block:PermalinkPagination}
-                <div class="perm-pagination">
-                    {block:PreviousPost}
-                        <a href="{PreviousPost}">&#8592; Last Post</a>
-                    {/block:PreviousPost}
+              </a>
+          {/block:ShowAvatar}
+          {block:ShowDescription}
+              <span class="desc">
+                  {Description}
+                  {block:ifDescriptionUnderline}
+                      <hr/>
+                  {/block:ifDescriptionUnderline}
+              </span>
+          {/block:ShowDescription}
+          <div id="nav">
+              {block:ifHome}
+                  <a class="nav" href="/">{text:Home Title}</a>
+              {/block:ifHome}
+              {block:AskEnabled}
+                  <a class="nav" href="/ask">{AskLabel}</a>
+              {/block:AskEnabled}
+              {block:ifLinkOneTitle}
+                  <a class="nav" href="{text:Link One}">{text:Link One Title}</a>
+              {/block:ifLinkOneTitle}
+              {block:ifLinkTwoTitle}
+                  <a class="nav" href="{text:Link Two}">{text:Link Two Title}</a>
+              {/block:ifLinkTwoTitle}
+              {block:ifLinkThreeTitle}
+                  <a class="nav" href="{text:Link Three}">{text:Link Three Title}</a>
+              {/block:ifLinkThreeTitle}
+              {block:ifLinkFourTitle}
+                  <a class="nav" href="{text:Link Four}">{text:Link Four Title}</a>
+              {/block:ifLinkFourTitle}
+              {block:ifLinkFiveTitle}
+                  <a class="nav" href="{text:Link Five}">{text:Link Five Title}</a>
+              {/block:ifLinkFiveTitle}
+              {block:HasPages}
+                  {block:Pages}
+                  <a class="nav" href="{URL}" title="{Label}">{Label}</a>
+                  {/block:Pages}
+              {/block:HasPages}
+              <span id="inner"></span>
+          </div>
+      </div>
+      {block:ifDescPagination}
+          {block:ifnotInfiniteScroll}
+              {block:Pagination}
+              <div id="pagination" class="desc-pagination">
 
-                    {block:NextPost}
-                        <a href="{NextPost}">| Next Post &#8594;</a>
-                    {/block:NextPost}
-                </div>
-            {/block:PermalinkPagination}
-        {/block:ifPermalinkPagination}
-    {/block:ifDescPagination}
-  </div>
+                    {block:JumpPagination length="5"}
+                          {block:CurrentPage}
+                                <span class="current_page">{PageNumber}</span>
+                          {/block:CurrentPage}
 
-  <div id="posts" class="posts">
-    {block:Posts}
-      <div id="entry" class="{block:ifShowCaptions}captions-enabled {/block:ifShowCaptions} {select:Layout} {block:ifBorders} borders {block:ifBorders} post {block:IndexPage}{TagsAsClasses}{block:IndexPage} entry {block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Panorama}panorama {/block:Panorama}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} {block:PermalinkPage} perma_page active exposed {/block:PermalinkPage}{block:IndexPage}index_page {/block:IndexPage}">
-        {block:Text}
-            {block:Title}<span class="txttitle">{Title}</span>{/block:Title}
-            <span class="entrytext">{Body}</span></a>
-            {block:IndexPage}
-            <div class="perma text">
+                          {block:JumpPage}
+                                <a class="jump_page" href="{URL}">{PageNumber}</a>
+                          {/block:JumpPage}
+                    {/block:JumpPagination}
+                    <br/>
+                    <div class="buttons-pagination">
+                        {block:PreviousPage}
+                        <span class="prev-nav-button">
+                              <a href="{PreviousPage}">&#8592; Previous | </a>
+                        </span>
+                        {/block:PreviousPage}
+
+                        {block:NextPage}
+                        <span class="next-nav-button">
+                              <a href="{NextPage}">Next &#8594;</a>
+                        </span>
+                        {/block:NextPage}
+                    </div>
+              </div>
+              {/block:Pagination}
+          {/block:ifnotInfiniteScroll}
+          {block:ifPermalinkPagination}
+              {block:PermalinkPagination}
+                  <div class="perm-pagination">
+                      {block:PreviousPost}
+                          <a href="{PreviousPost}">&#8592; Last Post</a>
+                      {/block:PreviousPost}
+
+                      {block:NextPost}
+                          <a href="{NextPost}">| Next Post &#8594;</a>
+                      {/block:NextPost}
+                  </div>
+              {/block:PermalinkPagination}
+          {/block:ifPermalinkPagination}
+      {/block:ifDescPagination}
+    </div>
+
+    <div id="posts" class="posts">
+      {block:Posts}
+        <div id="entry" class="{block:ifShowCaptions}captions-enabled {/block:ifShowCaptions} {select:Layout} {block:ifBorders} borders {block:ifBorders} post {block:IndexPage}{TagsAsClasses}{block:IndexPage} entry {block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Panorama}panorama {/block:Panorama}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} {block:PermalinkPage} perma_page active exposed {/block:PermalinkPage}{block:IndexPage}index_page {/block:IndexPage}">
+          {block:Text}
+              {block:Title}<span class="txttitle">{Title}</span>{/block:Title}
+              <span class="entrytext">{Body}</span></a>
+              {block:IndexPage}
+              <div class="perma text">
+                <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
+                <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
+              </div>
+              {/block:IndexPage}
+          {/block:Text}
+
+          {block:Link}
+              <a href="{URL}" class="title">{Name}</a>
+              {block:Description}{Description}{/block:Description}
+              {block:IndexPage}
               <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
               <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
-            </div>
-            {/block:IndexPage}
-        {/block:Text}
+              {/block:IndexPage}
+          {block:Link}
 
-        {block:Link}
-            <a href="{URL}" class="title">{Name}</a>
-            {block:Description}{Description}{/block:Description}
+          {block:Photo}
+
+          {block:IndexPage}
+          <div class="photo {block:ifShowCaptions}captions-enabled{/block:ifShowCaptions}">
+          <a href="{Permalink}"><img class="photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/></a>
+          {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
+          <div class="perma">
+          <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
+          <div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div></div>
+          </div>
+          {/block:IndexPage}
+          {block:PermalinkPage}{LinkOpenTag}<img class="photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="400"/>{LinkCloseTag}{/block:PermalinkPage}
+          {/block:Photo}
+
+          {block:Panorama}
+          {block:IndexPage}
+              {LinkOpenTag}<img class="pano" src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>{LinkCloseTag}
+              {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
+          <div class="perma">
+              <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
+              <div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
+          </div>
+          {/block:IndexPage}
+              {block:PermalinkPage}
+              {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"  width="400"/>{LinkCloseTag}
+              {/block:PermalinkPage}
+          {/block:Panorama}
+
+
+          {block:Photoset}
+              {block:IndexPage}
+                  <div class="photo photoset-index">
+
+                  {block:Photos}
+                  <img src="{PhotoURL-HighRes}" width="{PhotoWidth-HighRes}"height="{PhotoHeight-HighRes}" />
+                  {/block:Photos}
+
+                  {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
+                  <div class="perma phtst-perma" style="margin-top:5px;">
+                      <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
+                      <div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div></div>
+                  </div>
+              {/block:IndexPage}
+              {block:PermalinkPage}
+                  {Photoset}
+              {/block:PermalinkPage}
+          {/block:Photoset}
+
+
+          {block:Quote}
+                  <span class="quote quote-body">
+                      <blockquote class="{Length}">{Quote}</blockquote>
+                  </span>
+              {block:Source}
+              <table class="quote_source_table">
+                  <tbody>
+                      <tr>
+                          <td class="quote_source_mdash">
+                           —&nbsp;
+                          </td>
+                          <td class="quote_source">{Source}</td>
+                      </tr>
+                  </tbody>
+              </table>
+              {/block:Source}
+                  {block:IndexPage}
+                  <div class="perma quote text">
+                      <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
+                      <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
+                  </div>
+                  {/block:IndexPage}
+          {/block:Quote}
+
+          {block:Chat}
+              {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+              <ul class="conversation">
+              {block:Lines}
+                  <li class="chat-{Alt} chat">{block:Label}<span class="label">{Label}</span>{/block:Label} {Line}</li>
+              {/block:Lines}
+              </ul>
+              {block:IndexPage}
+                  <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
+                  <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
+              {/block:IndexPage}
+          {/block:Chat}
+
+          {block:Audio}
+            {block:AudioPlayer}
+                <div id="audioplayer">
+                    {AudioPlayer}
+                </div>
+                <div id="albumart">
+                    {block:AlbumArt}
+                        <img src="{AlbumArtURL}" width="90px">
+                    {/block:AlbumArt}
+                </div>
+                <div id="audiod">
+                    {PlayCount} plays</br>
+                    {block:TrackName}Title: {TrackName}</br>{/block:TrackName}
+                    {block:Artist}Artist: {Artist}</br>{/block:Artist}
+                </div>
+            {/block:AudioPlayer}
             {block:IndexPage}
-            <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-            <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
-            {/block:IndexPage}
-        {block:Link}
-
-        {block:Photo}
-
-        {block:IndexPage}
-        <div class="photo {block:ifShowCaptions}captions-enabled{/block:ifShowCaptions}">
-        <a href="{Permalink}"><img class="photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/></a>
-        {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
-        <div class="perma">
-        <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-        <div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div></div>
-        </div>
-        {/block:IndexPage}
-        {block:PermalinkPage}{LinkOpenTag}<img class="photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="400"/>{LinkCloseTag}{/block:PermalinkPage}
-        {/block:Photo}
-
-        {block:Panorama}
-        {block:IndexPage}
-            {LinkOpenTag}<img class="pano" src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>{LinkCloseTag}
-            {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
-        <div class="perma">
-            <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-            <div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
-        </div>
-        {/block:IndexPage}
-            {block:PermalinkPage}
-            {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"  width="400"/>{LinkCloseTag}
-            {/block:PermalinkPage}
-        {/block:Panorama}
-
-
-        {block:Photoset}
-            {block:IndexPage}
-                <div class="photo photoset-index">
-
-                {block:Photos}
-                <img src="{PhotoURL-HighRes}" width="{PhotoWidth-HighRes}"height="{PhotoHeight-HighRes}" />
-                {/block:Photos}
-
+                {block:AudioEmbed}
+                    <div class="audio-embed {select:Layout}">{AudioEmbed}</div>
+                {/block:AudioEmbed}
                 {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
-                <div class="perma phtst-perma" style="margin-top:5px;">
-                    <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-                    <div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div></div>
-                </div>
-            {/block:IndexPage}
-            {block:PermalinkPage}
-                {Photoset}
-            {/block:PermalinkPage}
-        {/block:Photoset}
-
-
-        {block:Quote}
-                <span class="quote quote-body">
-                    <blockquote class="{Length}">{Quote}</blockquote>
-                </span>
-            {block:Source}
-            <table class="quote_source_table">
-                <tbody>
-                    <tr>
-                        <td class="quote_source_mdash">
-                         —&nbsp;
-                        </td>
-                        <td class="quote_source">{Source}</td>
-                    </tr>
-                </tbody>
-            </table>
-            {/block:Source}
-                {block:IndexPage}
-                <div class="perma quote text">
-                    <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-                    <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
-                </div>
-                {/block:IndexPage}
-        {/block:Quote}
-
-        {block:Chat}
-            {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
-            <ul class="conversation">
-            {block:Lines}
-                <li class="chat-{Alt} chat">{block:Label}<span class="label">{Label}</span>{/block:Label} {Line}</li>
-            {/block:Lines}
-            </ul>
-            {block:IndexPage}
                 <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
                 <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
             {/block:IndexPage}
-        {/block:Chat}
+            {block:PermalinkPage}
+                <div class="audio-embed-perma">{AudioEmbed-400}</div>
+            {/block:PermalinkPage}
+          {/block:Audio}
 
-        {block:Audio}
-          {block:AudioPlayer}
-              <div id="audioplayer">
-                  {AudioPlayer}
+          {block:Video}
+              {block:IndexPage}
+                {VideoEmbed-400}
+                {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
+                <div style="padding-top:5px"></div>
+                <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
+                <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
+              {/block:IndexPage}
+            {block:PermalinkPage}
+              <div class="post video" style="margin-bottom:5px;">{VideoEmbed-400}</div>
+            {/block:PermalinkPage}
+          {/block:Video}
+
+
+          {block:Answer}
+              <div class="question">
+                  <div class="bubble-question">
+                      <b>{Asker}</b>: {Question}
+                  </div>
               </div>
-              <div id="albumart">
-                  {block:AlbumArt}
-                      <img src="{AlbumArtURL}" width="90px">
-                  {/block:AlbumArt}
+              {block:Answerer}
+                  <div class="answer">
+                      <p><div class="bubble-answer"><b>{Answerer}</b>: {Answer}</div></p>
+                  </div>
+              {/block:Answerer}
+
+              <div class="replies">
+                  {Replies}
               </div>
-              <div id="audiod">
-                  {PlayCount} plays</br>
-                  {block:TrackName}Title: {TrackName}</br>{/block:TrackName}
-                  {block:Artist}Artist: {Artist}</br>{/block:Artist}
-              </div>
-          {/block:AudioPlayer}
           {block:IndexPage}
-              {block:AudioEmbed}
-                  <div class="audio-embed {select:Layout}">{AudioEmbed}</div>
-              {/block:AudioEmbed}
-              {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
-              <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-              <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
+          <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
+          <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
           {/block:IndexPage}
+
+          {/block:Answer}
+
           {block:PermalinkPage}
-              <div class="audio-embed-perma">{AudioEmbed-400}</div>
+              <div class="post-notes">
+                  {block:Caption}
+                      {Caption}
+                  {/block:Caption}
+                  {block:NoteCount}
+                      <a title="Reblog with {NoteCountWithLabel}" target="_blank" href="{ReblogURL}">{NoteCountWithLabel}</a>,&nbsp;
+                  {/block:NoteCount}
+                  {block:ContentSource}
+                  Src: <a target="_blank" title="{SourceTitle}" href="{SourceURL}">{SourceTitle}</a>,&nbsp;
+                  {/block:ContentSource}
+                  {block:RebloggedFrom}
+                      Via: <a target="_blank" title="Reblog from {ReblogParentName}" href="{ReblogParentURL}">{ReblogParentName}</a>&nbsp;
+                  {/block:RebloggedFrom}{block:NoteCount}
+                  {block:NotReblog}Posted: {/block:NotReblog}{/block:NoteCount}{TimeAgo}{block:HasTags},&nbsp;tagged:&nbsp;
+                          {block:Tags}
+                              <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{TagURL}"> #{Tag}</a>
+                          {/block:Tags}
+                      {/block:hasTags}
+                      {PostNotes}
+              </div>
           {/block:PermalinkPage}
-        {/block:Audio}
 
-        {block:Video}
-            {block:IndexPage}
-              {VideoEmbed-400}
-              {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
-              <div style="padding-top:5px"></div>
-              <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-              <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
-            {/block:IndexPage}
-          {block:PermalinkPage}
-            <div class="post video" style="margin-bottom:5px;">{VideoEmbed-400}</div>
-          {/block:PermalinkPage}
-        {/block:Video}
-
-
-        {block:Answer}
-            <div class="question">
-                <div class="bubble-question">
-                    <b>{Asker}</b>: {Question}
-                </div>
-            </div>
-            {block:Answerer}
-                <div class="answer">
-                    <p><div class="bubble-answer"><b>{Answerer}</b>: {Answer}</div></p>
-                </div>
-            {/block:Answerer}
-
-            <div class="replies">
-                {Replies}
-            </div>
-        {block:IndexPage}
-        <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-        <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
-        {/block:IndexPage}
-
-        {/block:Answer}
-
-        {block:PermalinkPage}
-            <div class="post-notes">
-                {block:Caption}
-                    {Caption}
-                {/block:Caption}
-                {block:NoteCount}
-                    <a title="Reblog with {NoteCountWithLabel}" target="_blank" href="{ReblogURL}">{NoteCountWithLabel}</a>,&nbsp;
-                {/block:NoteCount}
-                {block:ContentSource}
-                Src: <a target="_blank" title="{SourceTitle}" href="{SourceURL}">{SourceTitle}</a>,&nbsp;
-                {/block:ContentSource}
-                {block:RebloggedFrom}
-                    Via: <a target="_blank" title="Reblog from {ReblogParentName}" href="{ReblogParentURL}">{ReblogParentName}</a>&nbsp;
-                {/block:RebloggedFrom}{block:NoteCount}
-                {block:NotReblog}Posted: {/block:NotReblog}{/block:NoteCount}{TimeAgo}{block:HasTags},&nbsp;tagged:&nbsp;
-                        {block:Tags}
-                            <a {block:ifNoFollow}rel="nofollow"{/block:ifNoFollow} href="{TagURL}"> #{Tag}</a>
-                        {/block:Tags}
-                    {/block:hasTags}
-                    {PostNotes}
-            </div>
-        {/block:PermalinkPage}
-
-        </div>
-    {/block:Posts}
-  </div>
-  {block:ifnotDescPagination}
+          </div>
+      {/block:Posts}
+    </div>
+    {block:ifnotDescPagination}
       {block:ifNotinfinitescroll}
           {block:Pagination}
               <div id="pagination" class="post-bottom-pagination">
@@ -746,12 +746,13 @@ li.chat{
                   </div>
               {/block:PermalinkPagination}
       {/block:ifPermalinkPagination}
-  {/block:ifnotDescPagination}
-</div>
+    {/block:ifnotDescPagination}
+
+  </div>
 
 
 {block:ifInfiniteScroll}{block:Pagination}{block:NextPage}<div id="page-nav"><a href="{NextPage}"></a></div>{/block:NextPage}{/block:Pagination}{/block:ifInfiniteScroll}
-</div>
+
 
 {block:IfGoogleAnalyticsID}
             <script>
