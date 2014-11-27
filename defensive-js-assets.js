@@ -14,6 +14,6 @@ var columnsObj = {
     $("#posts").css("width", "620px");
   },
   three: function() {
-    $("#posts").css("max-width", "60%");
+    $("#posts").css("max-width", "55%");
   }
 }
