@@ -13,7 +13,7 @@ _ __ _____      ___ __ ____
 \__|_| |_|\___|_| |_| |_|\___||___/
 
 please do not steal, copy, plagerize, use as base code, distrubute or anything alike without written consent
-defensive theme v1.9.0-2
+defensive theme v1.9.0-3
 designed, built and maintained by alex rowrz
 http://rowrz.tumblr.com/themes
 -->
@@ -318,7 +318,7 @@ width:100px;
 #albumart img {float:left;
 margin-right:10px;}
 .audio-embed.one > iframe{width:400px;}
-.audio-embed.two,.audio-embed.three > iframe{width:200px;}
+.audio-embed.two > iframe,.audio-embed.three > iframe{width:200px;height:200px;}
 .audio-embed-perma > iframe{width:400px;}
 /*end audio*/
 
@@ -638,7 +638,7 @@ li.chat{
             {/block:AudioPlayer}
             {block:IndexPage}
                 {block:AudioEmbed}
-                    <div class="audio-embed {select:Layout}">{AudioEmbed}</div>
+                    <div class="audio-embed {select:Layout}">{AudioEmbed-400}</div>
                 {/block:AudioEmbed}
                 {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
                 <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
