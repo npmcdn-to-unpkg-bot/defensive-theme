@@ -13,7 +13,7 @@ _ __ _____      ___ __ ____
 \__|_| |_|\___|_| |_| |_|\___||___/
 
 please do not steal, copy, plagerize, use as base code, distrubute or anything alike without written consent
-defensive theme v1.9.0-5
+defensive theme v1.9.0-6
 designed, built and maintained by alex rowrz
 http://rowrz.tumblr.com/themes
 -->
@@ -162,6 +162,7 @@ position:relative;
 .index-page .1stphoto img {display: none;}
 .index-page .1stphoto img:first-child {display: block;}
 .phtst{max-width:100%;}
+.photo-caption img{width:auto;}
 
 
 #entry .photo.captions-enabled > p {margin-top: -2px;}
@@ -556,7 +557,7 @@ li.chat{
           {block:IndexPage}
           <div class="photo {block:ifShowCaptions}captions-enabled{/block:ifShowCaptions}">
           <a href="{Permalink}"><img class="photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/></a>
-          {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
+          <div class="photo-caption">{block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}</div>
           <div class="perma">
           <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
           <div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div></div>
@@ -568,7 +569,7 @@ li.chat{
           {block:Panorama}
           {block:IndexPage}
               {LinkOpenTag}<img class="pano" src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>{LinkCloseTag}
-              {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
+              <div class="photo-caption">{block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}</div>
           <div class="perma">
               <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
               <div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
@@ -588,7 +589,7 @@ li.chat{
                   <img src="{PhotoURL-HighRes}" width="{PhotoWidth-HighRes}"height="{PhotoHeight-HighRes}" />
                   {/block:Photos}
 
-                  {block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}
+                  <div class="photo-caption">{block:ifShowCaptions}{block:Caption}{Caption}{/block:Caption}{/block:ifShowCaptions}</div>
                   <div class="perma phtst-perma" style="margin-top:5px;">
                       <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
                       <div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div></div>
