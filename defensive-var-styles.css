@@ -1,0 +1,42 @@
+a:hover{
+  color:{color:LinkHover};}
+
+body {
+  background-image:url('{image:Background}');
+  color:{color:Text};
+  font-size:{text:Font Size};
+  background-color: {color:Background};
+}
+
+  a:link, a:active, a:visited{
+  color:{color:Link};
+}
+            
+#pagination,
+#pagination span,
+#pagination span > a,
+a.jump_page,
+.perm-pagination > a,
+.perm-bottom-pagination>a{color:{color:Pagination};}
+
+.sidebar{font-size:{text:Side Font Size};}
+
+.sidebar .sideguts,
+.entry{background-color:{color:Entry Background};}
+
+.sidebar .sideguts.borders,
+.entry.borders{border:1px solid {color:Borders};}
+
+.side-title{
+color:{TitleColor};
+font-weight:{TitleFontWeight};
+}
+
+#entry blockquote {border-left: solid 2px {color:Accents};}
+
+pre,
+.bubble-question,
+.bubble-answer{background-color:{color:Accents};}
+
+.quote_source_mdash,
+.quote_source{font-size:{text:Font Size};}
