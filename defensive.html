@@ -100,48 +100,46 @@
           transition: all 0.3s ease-out;}
 
           a:link, a:active, a:visited{text-decoration:none;
-          color:{color:Link};
           -webkit-transition: all 0.3s ease-out;
           -moz-transition: all 0.3s ease-out;
-          transition: all 0.3s ease-out;}
+          transition: all 0.3s ease-out;
+          color:{color:Link};}
 
           a:hover{text-decoration:none;
-          color:{color:LinkHover};
           text-shadow:0px 0px 20px #fff;
           -webkit-transition: all 0.3s ease-out;
           -moz-transition: all 0.3s ease-out;
-          transition: all 0.3s ease-out; }
+          transition: all 0.3s ease-out; 
+          color:{color:LinkHover};}
 
           body {padding: 0px;
           margin: 0px;
-          color:{color:Text};
           line-height:16px;
+          background-size:cover;
+          background-image:url('{image:Background}');
+          color:{color:Text};
           font-size:{text:Font Size};
           background-color: {color:Background};
-          background-image:url('{image:Background}');
-          background-size:cover;
           }
           
           h1{margin-top:0;}
 
           pre{
-              background-color:{color:Accents};
-              padding:10px;}
+              padding:10px;
+              background-color:{color:Accents};}
               
               
           /*photo posts/index page posts*/
           #text img, #entry img {height: auto;
               max-width:100%;}
 
-          #posts{
-          {block:PermalinkPage}
-              width:860px;
-          {/block:PermalinkPage}
+          .posts{
           margin-top: 15px;
           left:50%;
           margin-left:-200px;
           position:relative;
           }
+          .posts.perma_page{width:860px;}
 
           .entry.perma_page{width:400px; margin-left:40px;}
           .entry.one.index_page{width:400px;}
