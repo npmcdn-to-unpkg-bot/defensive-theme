@@ -16,7 +16,7 @@
       \__|_| |_|\___|_| |_| |_|\___||___/
 
       please do not steal, copy, plagerize, use as base code, distrubute or anything alike without written consent
-      defensive theme v1.9.2-1emojistatus:beta
+      defensive theme v1.9.2-2emojistatus:beta
       designed, built and maintained by alex rowrz
       http://rowrz.tumblr.com/themes
       -->
@@ -112,7 +112,8 @@
           transition: all 0.3s ease-out; 
           color:{color:LinkHover};}
 
-          body {padding: 0px;
+          body {
+          padding: 0px;
           margin: 0px;
           line-height:16px;
           background-size:cover;
@@ -138,6 +139,11 @@
           left:50%;
           margin-left:-200px;
           position:relative;
+          -moz-transition: all 1s; 
+          -webkit-transition: all 1s;  
+          -ms-transition: all 1s;  
+          -o-transition: all 1s;  
+          transition: all 1s; 
           }
           .posts.perma_page{width:860px;}
 
@@ -152,6 +158,11 @@
             line-height:15px;
             font-family:'trebuchet ms', arial, sans-serif;
             background-color:{color:Entry Background};
+          -moz-transition: all .5s ease-in-out .5s; 
+          -webkit-transition: all .5s ease-in-out .5s; 
+          -ms-transition: all .5s ease-in-out .5s;  
+          -o-transition: all .5s ease-in-out .5s;  
+          transition: all .5s ease-in-out .5s; 
           }
 
           #entry .photo{margin-bottom:5px;
@@ -438,7 +449,7 @@
     <div class="left">
 
       <div class="sidebar">
-        <div class="sideguts">
+        <div class="sideguts {block:ifBorders} borders {/block:ifBorders}">
 
             {block:ifShowTitleOnBlog}
                 {block:ShowTitle}
@@ -539,7 +550,7 @@
 
       <div id="posts" class="posts">
         {block:Posts}
-          <div id="entry" class="{block:ifShowCaptions}captions-enabled {/block:ifShowCaptions} {select:Layout} {block:ifBorders} borders {block:ifBorders} post {block:IndexPage}{TagsAsClasses}{block:IndexPage} entry {block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Panorama}panorama {/block:Panorama}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} {block:PermalinkPage} perma_page active exposed {/block:PermalinkPage}{block:IndexPage}index_page {/block:IndexPage}">
+          <div id="entry" class="{block:ifShowCaptions}captions-enabled {/block:ifShowCaptions} {select:Layout} {block:ifBorders} borders {/block:ifBorders} post {block:IndexPage}{TagsAsClasses}{block:IndexPage} entry {block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Panorama}panorama {/block:Panorama}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} {block:PermalinkPage} perma_page active exposed {/block:PermalinkPage}{block:IndexPage}index_page {/block:IndexPage}">
             {block:Text}
                 {block:Title}<span class="txttitle">{Title}</span>{/block:Title}
                 <span class="entrytext">{Body}</span></a>
