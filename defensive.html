@@ -16,7 +16,7 @@
       \__|_| |_|\___|_| |_| |_|\___||___/
 
       please do not steal, copy, plagerize, use as base code, distrubute or anything alike without written consent
-      defensive theme v1.9.1-2
+      defensive theme v1.9.2-1emojistatus:beta
       designed, built and maintained by alex rowrz
       http://rowrz.tumblr.com/themes
       -->
@@ -84,12 +84,8 @@
       <script defer type="text/javascript" src="https://secure.static.tumblr.com/4ra4qv5/4TPne8je5/jquery.masonry.min.2.1.08.defensive.js"></script>
       <script type="text/javascript" src="https://secure.static.tumblr.com/4ra4qv5/8N8n57y0s/infinitescroll.min.js"></script>
       <script>$(document).ready(function(){columnsObj.{select:Layout}();});</script>
+      <link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/js3ngfxii/silkscreen.base64.defensive.css"/>
       <style type="text/css">
-
-          @font-face
-          {font-family: silkscreen;
-          src: url(http://static.tumblr.com/ojd74qh/noSn5fmf6/slkscr.ttf);}
-
           /*main elements*/
 
           *{word-wrap:break-word !important;
@@ -148,8 +144,8 @@
           }
 
           .entry.perma_page{width:400px; margin-left:40px;}
-          .entry.one{width:400px;}
-          .entry.two,.entry.three{width:200px;}
+          .entry.one.index_page{width:400px;}
+          .entry.two.index_page,.entry.three.index_page{width:200px;}
           .entry.borders{border:1px solid {color:Borders};}
           #entry {margin:16px;
             padding:9px;
@@ -180,21 +176,24 @@
           .desc-pagination{text-align:center;
           margin-top:4px;}
           .prev-nav-button{display:inline;}
-          .post-bottom-pagination{width:250px;
-          text-align:center;
-          font-family:silkscreen,courier,monospace,arial;
-          margin-bottom:10px;}
+          
           #pagination,#pagination span,#pagination span > a,a.jump_page{color:{color:Pagination};}
           .perm-pagination{
               text-align:center;
               margin-top:5px;
               margin-left:-3px;
           }
+          .post-bottom-pagination,.perm-bottom-pagination{
+              text-align:center;
+              font-family:'silkscreen',courier,monospace;
+          }
+          .post-bottom-pagination{
+              margin-bottom:10px
+          }
           .perm-bottom-pagination{
               text-align:center;
-              width:500px;
               padding-bottom:5px;
-              font-family:silkscreen,courier,monospace,arial;
+              font-family:'silkscreen',courier,monospace;
           }
           .perm-pagination > a,.perm-bottom-pagination>a{color:{color:Pagination};}
           .perma.phtst-perma{
@@ -274,7 +273,7 @@
           -webkit-transition: all 0.8s linear;
           -moz-transition: all 0.8s linear;
           transition: all 0.8s linear;
-          font-family:silkscreen,consolas,'trebuchet ms', arial, sans-serif;}
+          font-family:'trebuchet ms', arial, sans-serif;}
           .sidebar .sideguts{
           background-color:{color:Entry Background};
           padding:14px;
