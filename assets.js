@@ -20,5 +20,5 @@ $(document).ready(function() {
     $("body").prepend('<a id="install-btn" href="https://www.tumblr.com/theme/38849" title="Install This Theme" target="_blank" style="opacity: 1;"><span id="install-btn-txt">Install Theme</span></a>');
   })
 });
-document.write('<link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/Q0tngi4oj/addons.css"/>');
 document.write('<link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/Kecngi4ls/silkscreen.css"/>');
+document.write('<link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/fsPngi76f/addons.css"/>');
