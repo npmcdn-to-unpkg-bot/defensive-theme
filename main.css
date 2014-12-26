@@ -240,19 +240,20 @@ height:200px;
 /*end audio*/
 
 /*video player*/
-.post.one.video.index_page iframe,
-.post.one.video.index_page embed,
-.post.one.video.index_page object{
+.entry.one.video.index_page > iframe,
+.entry.one.video.index_page > embed,
+.entry.one.video.index_page > object{
 width:400px;
 height:400px;
 overflow: hidden;
 }
-.post.two.video.index_page iframe
-.post.two.video.index_page embed,
-.post.two.video.index_page object
-.post.three.video.index_page iframe,
-.post.three.video.index_page embed,
-.post.three.video.index_page object{
+        
+.entry.two.video.index_page > iframe,
+.entry.two.video.index_page > embed,
+.entry.two.video.index_page > object,
+.entry.three.video.index_page > iframe,
+.entry.three.video.index_page > embed,
+.entry.three.video.index_page > object{
 width:200px;
 height:200px;
 overflow: hidden;

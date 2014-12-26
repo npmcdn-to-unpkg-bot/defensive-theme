@@ -22,7 +22,7 @@ a#install-btn {
 }
 
 #install-btn:hover {
-  background: url("http://static.tumblr.com/tpqedpr/cQ1mbwb60/de.png") rgba(0,0,0,0.0) no-repeat
+  background: url("http://static.tumblr.com/tpqedpr/cQ1mbwb60/de.png") rgba(0,0,0,0.3) no-repeat
 }
 
 span#install-btn-txt {
