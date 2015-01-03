@@ -16,7 +16,7 @@
       \__|_| |_|\___|_| |_| |_|\___||___/
 
       please do not steal, copy, plagerize, use as base code, distrubute or anything alike without written consent
-      defensive theme v1.9.3-17emojistatus:beta
+      defensive theme v1.9.3-19emojistatus:beta,nopostatus:beta
       designed, built and maintained by alex rowrz
       http://rowrz.tumblr.com/themes
       -->
@@ -55,6 +55,7 @@
       <meta name="if:Permalink Pagination" content="1">
       <meta name="if:Description Underline" content="1">
       <meta name="if:Emoji Support BETA" content="0">
+      <meta name="if:noPo BETA" content="0">
       <!--layout-->
       <meta name="select:Layout" content="one" title="One Column">
       <meta name="select:Layout" content="two" title="Two Columns">
@@ -74,6 +75,7 @@
       <meta name="text:Link Five" content="">
       <meta name="text:Link Five Title" content="">
       <meta name="text:Google analytics ID" content="">
+      <meta name="text:noPo" content="$().noPo('.x'); //change the 'x' to whatever you want the tag to be, remember to keep the '.'">
       {/block:hidden}
       
       <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -83,9 +85,9 @@
       <script defer type="text/javascript" src="http://static.tumblr.com/4ra4qv5/4TPne8je5/jquery.masonry.min.2.1.08.defensive.js"></script>
       <script type="text/javascript" src="http://static.tumblr.com/4ra4qv5/8N8n57y0s/infinitescroll.min.js"></script>
       
-      <script type="text/javascript" src="http://static.tumblr.com/4ra4qv5/4YZnh7m3i/assets.js"></script>
+      <script type="text/javascript" src="http://static.tumblr.com/4ra4qv5/jeLnhle98/assets.js"></script>
       <link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/zNtngl3gi/addons.css"/>
-      <link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/b58nh7ncf/main.css"/>
+      <link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/MWInhldtv/rowrz.main.css"/>
   
       <script>$(document).ready(function(){columnsObj.{select:Layout}();});</script>
       <style type="text/css">
@@ -242,7 +244,7 @@
 
       <div id="posts" class="posts">
         {block:Posts}
-          <div id="entry" class="entry post {block:ifShowCaptions}captions-enabled {/block:ifShowCaptions} {select:Layout} {block:ifBorders} borders {/block:ifBorders}  {block:IndexPage}{TagsAsClasses}{block:IndexPage}  {block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Panorama}panorama {/block:Panorama}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} {block:PermalinkPage} perma_page active exposed {/block:PermalinkPage}{block:IndexPage}index_page {/block:IndexPage}">
+          <div id="entry" class="entry post {block:ifShowCaptions}captions-enabled {/block:ifShowCaptions} {select:Layout}-col {block:ifBorders} borders {/block:ifBorders}  {block:IndexPage}{TagsAsClasses} nopo{/block:IndexPage}  {block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Panorama}panorama {/block:Panorama}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} {block:PermalinkPage} perma_page active exposed {/block:PermalinkPage}{block:IndexPage}index_page {/block:IndexPage}">
             {block:Text}
                 {block:Title}<span class="txttitle">{Title}</span>{/block:Title}
                 <span class="entrytext">{Body}</span></a>
@@ -530,6 +532,14 @@
                 {/block:ifInfiniteScroll}
             });
     </script>
-    {block:IfEmojiSupportBETA}<link rel="stylesheet" href="https://secure.static.tumblr.com/4ra4qv5/VNPnfxjo0/minemoji.css"/><script src="http://static.tumblr.com/4ra4qv5/R8Snfxiud/jminemoji.js"></script><script type="text/javascript">$(function(){$(".entrytext").minEmoji();$(".photo-caption").minEmoji();});document.write('<style type="text/css">.em{zoom:'+parseInt($("body").css('font-size'))*6.25+'%;}</style>');</script>{/block:IfEmojiSupportBETA}
+    {block:ifEmojiSupportBETA}<link rel="stylesheet" href="https://secure.static.tumblr.com/4ra4qv5/VNPnfxjo0/minemoji.css"/><script src="http://static.tumblr.com/4ra4qv5/R8Snfxiud/jminemoji.js"></script><script type="text/javascript">$(function(){$(".entrytext").minEmoji();$(".photo-caption").minEmoji();});document.write('<style type="text/css">.em{zoom:'+parseInt($("body").css('font-size'))*6.25+'%;}</style>');</script>{/block:ifEmojiSupportBETA}
+    {block:ifnoPoBETA}<script type="text/javascript">
+    /*---remember to read the tutorial on how to setup the rest!----*/
+    /*tutorial can be found here: http://rowrz.com/post/103999179659/nopo-2-x-hide-specifically-tagged-posts*/
+    $(document).ready(function() {
+        {text:noPo}
+    });
+    </script>
+    {/block:ifnoPoBETA}
   </body>
 </html>
