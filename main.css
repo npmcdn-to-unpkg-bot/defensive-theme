@@ -43,8 +43,8 @@ position:relative;
 .posts.perma_page{width:860px;}
 
 .entry.perma_page{width:400px; margin-left:40px;}
-.entry.one.index_page{width:400px;}
-.entry.two.index_page,.entry.three.index_page{width:200px;}
+.entry.one-col.index_page{width:400px;}
+.entry.two-col.index_page,.entry.three.index_page{width:200px;}
 
 #entry {margin:16px;
 padding:9px;
@@ -155,7 +155,7 @@ margin-top:-13px;
 transition: all 1s ease;
 -o-transition: all 1s ease;
 float:right;}
-.captions-enabled.one.panorama .perma {margin-top:10px;}
+.captions-enabled.one-col.panorama .perma {margin-top:10px;}
 /*end photos/permalinks/navigations*/
 
 
@@ -240,20 +240,20 @@ height:200px;
 /*end audio*/
 
 /*video player*/
-.entry.one.video.index_page > iframe,
-.entry.one.video.index_page > embed,
-.entry.one.video.index_page > object{
+.entry.one-col.video.index_page > iframe,
+.entry.one-col.video.index_page > embed,
+.entry.one-col.video.index_page > object{
 width:400px;
 height:400px;
 overflow: hidden;
 }
         
-.entry.two.video.index_page > iframe,
-.entry.two.video.index_page > embed,
-.entry.two.video.index_page > object,
-.entry.three.video.index_page > iframe,
-.entry.three.video.index_page > embed,
-.entry.three.video.index_page > object{
+.entry.two-col.video.index_page > iframe,
+.entry.two-col.video.index_page > embed,
+.entry.two-col.video.index_page > object,
+.entry.three-col.video.index_page > iframe,
+.entry.three-col.video.index_page > embed,
+.entry.three-col.video.index_page > object{
 width:200px;
 height:200px;
 overflow: hidden;
