@@ -44,7 +44,7 @@ position:relative;
 
 .entry.perma_page{width:400px; margin-left:40px;}
 .entry.one-col.index_page{width:400px;}
-.entry.two-col.index_page,.entry.three.index_page{width:200px;}
+.entry.two-col.index_page,.entry.three-col.index_page{width:200px;}
 
 #entry {margin:16px;
 padding:9px;
