@@ -1,14 +1,3 @@
-var columnsObj = {
-  one: function() {
-    $("#posts").css("width", "400px");
-  },
-  two: function() {
-    $("#posts").css("width", "620px");
-  },
-  three: function() {
-    $("#posts").css("max-width", "55%");
-  }
-}
 $(window).load(function() {
   setTimeout(function() {
     $('#install-btn').animate({top: "3px"});
