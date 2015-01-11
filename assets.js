@@ -10,6 +10,8 @@ $(document).ready(function() {
   })
 });
 document.write('<link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/Kecngi4ls/silkscreen.css"/>');
-$.fn.noPo=function(e){$('.nopo').siblings(e).each(function(){$(this).remove()})};
+document.write('<script type="text/javascript" src="http://static.tumblr.com/4ra4qv5/unEnhq7pl/rowrz.pageload.wocredit.js"><\/script>');
+
+
 
 
