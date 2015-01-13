@@ -180,7 +180,7 @@ transition: all 0.8s linear;
 font-family:'trebuchet ms', arial, sans-serif;}
 
 @media (max-width: 830px) {
-	.sidebar {
+	.sidebar.index_page {
 		margin-left:-333px;
 	}
 }
@@ -192,12 +192,17 @@ font-family:'trebuchet ms', arial, sans-serif;}
         margin-left: -400px;
     }
 }
-@media all and (min-width: 819px){
-    .posts.three-col.index_page{
-        margin-left: -100px;
-    }
+@media all and (min-width: 2300px){
+	.sidebar.index_page{
+		margin-left:-1000px;
+	}
+	.posts.index_page{
+		margin-left:-740px;
+	}
+	.posts.three-col.index_page{
+		max-width: 72%;
+	}
 }
-
 
 .sidebar .sideguts{
 padding:14px;
