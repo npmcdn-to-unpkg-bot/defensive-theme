@@ -43,13 +43,7 @@ pre{padding:10px;}
  -moz-transition: all 0.8s linear;
  transition: all 0.8s linear;
 }
-.posts.one-col.index_page{width:400px;}
-.posts.two-col.index_page{width:620px;}
-.posts.three-col.index_page{max-width:62%;}
 
-.entry.perma_page{width:400px; margin-left:40px;}
-.entry.one-col.index_page{width:400px;}
-.entry.two-col.index_page,.entry.three-col.index_page{width:200px;}
 
 #entry {margin:16px;
 padding:9px;
@@ -69,16 +63,13 @@ transition: all 0.3s ease-in-out;
 
 .pano img{width:100%;}
 .photo img{width:100%;}
-.index-page .1stphoto img {display: none;}
-.index-page .1stphoto img:first-child {display: block;}
+.photoset-index .1stphoto img {display: none;}
+.photoset-index .1stphoto img:first-child {display: block;}
 .phtst{max-width:100%;}
 .photo-caption img{width:auto;}
 .post-notes img{width:auto;}
 
 #entry .photo.captions-enabled > p {margin-top: -2px;}
-
-div.photoset-index img {display: none;}
-div.photoset-index img:first-child {display: block;}
 
 /*navigation*/
 .desc-pagination{text-align:center;
@@ -164,6 +155,77 @@ float:right;}
 /*end photos/permalinks/navigations*/
 
 
+
+
+/**variable based css**/
+
+@media (max-width: 830px) {
+	.sidebar.index_page {
+		margin-left:-333px;
+	}
+}
+@media all and (min-width: 1381px){
+    .left.three_col > .sidebar.index_page{
+        margin-left: -600px;
+    }
+    .left.three_col > .posts.index_page{
+        margin-left: -400px;
+    }
+}
+@media all and (min-width: 2300px){
+	.left.three_col > .sidebar.index_page{
+		margin-left:-1000px;
+	}
+	.left.three_col > .posts.index_page{
+		margin-left:-740px;
+		max-width: 72%;
+	}
+}
+
+
+.left.one_col.index_page > .posts{width:400px;}
+.left.two_col.index_page > .posts{width:620px;}
+.left.three_col.index_page > .posts{max-width:62%;}
+
+.left.perma_page > .posts > .entry{width:400px; margin-left:40px;}
+.left.one_col.index_page > .posts > .entry{width:400px;}
+.left.two_col.index_page > .posts > .entry,
+.left.three_col.index_page > .posts > .entry{width:200px;}
+
+/*audio player vars*/
+.audio-embed.one > iframe,
+.audio-embed-perma > iframe{width:400px;}
+
+.audio-embed.two > iframe,
+.audio-embed.three > iframe{
+width:200px;
+height:200px;
+}
+/*end audio vars*/
+
+/*video player*/
+.left.one_col.index_page > .posts > .entry.video > iframe,
+.left.one_col.index_page > .posts > .entry.video > embed,
+.left.one_col.index_page > .posts > .entry.video > object{
+width:400px;
+height:400px;
+overflow: hidden;
+}
+        
+.left.two_col.index_page > .posts > .entry.video > iframe,
+.left.two_col.index_page > .posts > .entry.video > embed,
+.left.two_col.index_page > .posts > .entry.video > object,
+.left.three_col.index_page > .posts > .entry.video > iframe,
+.left.three_col.index_page > .posts > .entry.video > embed,
+.left.three_col.index_page > .posts > .entry.video > object{
+width:200px;
+height:200px;
+overflow: hidden;
+}
+/*end video player vars*/
+
+/**end variable based css**/
+
 /*sidebar*/
 .sidebar{
 margin-top:125px;
@@ -178,31 +240,6 @@ z-index:98;
 -moz-transition: all 0.8s linear;
 transition: all 0.8s linear;
 font-family:'trebuchet ms', arial, sans-serif;}
-
-@media (max-width: 830px) {
-	.sidebar.index_page {
-		margin-left:-333px;
-	}
-}
-@media all and (min-width: 1381px){
-    .sidebar.index_page{
-        margin-left: -600px;
-    }
-    .posts.index_page{
-        margin-left: -400px;
-    }
-}
-@media all and (min-width: 2300px){
-	.sidebar.index_page{
-		margin-left:-1000px;
-	}
-	.posts.index_page{
-		margin-left:-740px;
-	}
-	.posts.three-col.index_page{
-		max-width: 72%;
-	}
-}
 
 .sidebar .sideguts{
 padding:14px;
@@ -253,36 +290,8 @@ width:100px;
 #albumart img {float:left;
 margin-right:10px;}
 
-.audio-embed.one > iframe,
-.audio-embed-perma > iframe{width:400px;}
 
-.audio-embed.two > iframe,
-.audio-embed.three > iframe{
-width:200px;
-height:200px;
-}
 /*end audio*/
-
-/*video player*/
-.entry.one-col.video.index_page > iframe,
-.entry.one-col.video.index_page > embed,
-.entry.one-col.video.index_page > object{
-width:400px;
-height:400px;
-overflow: hidden;
-}
-        
-.entry.two-col.video.index_page > iframe,
-.entry.two-col.video.index_page > embed,
-.entry.two-col.video.index_page > object,
-.entry.three-col.video.index_page > iframe,
-.entry.three-col.video.index_page > embed,
-.entry.three-col.video.index_page > object{
-width:200px;
-height:200px;
-overflow: hidden;
-}
-/*end video*/
 
 /*text posts*/
 span.entrytext > p {margin-top: 0px;}
