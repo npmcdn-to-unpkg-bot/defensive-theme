@@ -67,7 +67,7 @@ transition: all 0.3s ease-in-out;
 .photoset-index .1stphoto img:first-child {display: block;}
 .phtst{max-width:100%;}
 .photo-caption img{width:auto;}
-.photo-caption em{margin-bottom:1em;}
+.photo-caption {margin-bottom:1em;}
 .post-notes img{width:auto;}
 
 #entry .photo.captions-enabled > p {margin-top: -2px;}
