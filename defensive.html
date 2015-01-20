@@ -21,15 +21,20 @@
       http://rowrz.com/themes
       -->
       <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-      <script>window.jQuery || document.write('<script type="text/javascript" src="https://secure.static.tumblr.com/4ra4qv5/23Cngfg0w/jquery.1.11.1.min.js"><\/script>')</script>
+      <script>!window.jQuery && document.write(unescape('%3Cscript type="text/javascript" src="http://static.tumblr.com/4ra4qv5/23Cngfg0w/jquery.1.11.1.min.js"%3E%3C/script%3E'));</script>
+      
       <link rel="stylesheet" type="text/css" href="https://secure.static.tumblr.com/4ra4qv5/Zoundmipb/normalize.css">
       <script defer src="https://secure.static.tumblr.com/4ra4qv5/lihnfxm92/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+      
       {block:Description}
                   <meta name="description" content="{MetaDescription}" />
       {/block:Description}
+      
       <link rel="shortcut icon" href="{Favicon}">
       <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+      
       {MobileAppHeaders}
+      
       <title>{block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{block:PermalinkPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{/block:PermalinkPage}{Title} | {Name}</title>
       <link rel="shortcut icon" href="{Favicon}">
       <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}" />
