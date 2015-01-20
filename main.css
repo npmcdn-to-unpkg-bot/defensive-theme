@@ -165,18 +165,18 @@ float:right;}
 	}
 }
 @media all and (min-width: 1381px){
-    .left.three_col > .sidebar.index_page{
+    .left.three_col.index_page > .sidebar{
         margin-left: -600px;
     }
-    .left.three_col > .posts.index_page{
+    .left.three_col.index_page > .posts{
         margin-left: -400px;
     }
 }
 @media all and (min-width: 2300px){
-	.left.three_col > .sidebar.index_page{
+	.left.three_col.index_page > .sidebar{
 		margin-left:-1000px;
 	}
-	.left.three_col > .posts.index_page{
+	.left.three_col.index_page > .posts{
 		margin-left:-740px;
 		max-width: 72%;
 	}
