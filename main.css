@@ -24,6 +24,7 @@ padding: 0px;
 margin: 0px;
 line-height:16px;
 background-size:cover;
+background-attachment: fixed;
 }
  
 h1,h2,h3,h4{margin:0em;}
