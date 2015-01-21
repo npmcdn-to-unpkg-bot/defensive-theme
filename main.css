@@ -113,10 +113,7 @@ bottom:0px;
 left:0px;
 line-height:14px;
 text-transform: uppercase;
--webkit-transition: all 0.8s ease;
--moz-transition: all 0.8s ease;
-transition: all 0.8s ease;
--o-transition: all 0.8s ease;}
+}
 
 .perma2{float:right;
 height: auto;
@@ -125,10 +122,7 @@ bottom:0px;
 right:0px;
 line-height:14px;
 text-transform: uppercase;
--webkit-transition: all 0.8s ease;
--moz-transition: all 0.8s ease;
-transition: all 0.8s ease;
--o-transition: all 0.8s ease;}
+}
 
 .perma1, .perma2, .perm, .perm2{
   font-family:silkscreen,courier,monospace,arial;
@@ -138,20 +132,14 @@ transition: all 0.8s ease;
 font-size:90%;
 line-height:13px;
 text-transform:uppercase;
--webkit-transition: all 1s ease;
--moz-transition: all 1s ease;
-transition: all 1s ease;
--o-transition: all 1s ease;}
+float:left;
+}
 
 .perm2 {display: block;
 font-size:90%;
 line-height:13px;
-margin-top:-13px;
 text-transform:uppercase;
--webkit-transition: all 1s ease;
--moz-transition: all 1s ease;
-transition: all 1s ease;
--o-transition: all 1s ease;
+
 float:right;}
 .captions-enabled.one-col.panorama .perma {margin-top:10px;}
 /*end photos/permalinks/navigations*/
