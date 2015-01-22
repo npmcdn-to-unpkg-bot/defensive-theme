@@ -10,8 +10,7 @@ $(document).ready(function() {
   })
 });
 document.write('<link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/Kecngi4ls/silkscreen.css"/>');
-document.write('<script type="text/javascript" src="http://static.tumblr.com/4ra4qv5/unEnhq7pl/rowrz.pageload.wocredit.js"><\/script>');
-
+$.fn.noPo=function(a){if(window.location.pathname.split("/")[1]!="tagged"){$(".nopo").siblings(a).each(function(){$(this).remove()})}};
 
 
 
