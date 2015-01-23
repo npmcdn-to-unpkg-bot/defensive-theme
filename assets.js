@@ -1,8 +1,6 @@
 document.write('<link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/Kecngi4ls/silkscreen.css"/>');
 $.fn.noPo=function(a){if(window.location.pathname.split("/")[1]!="tagged"){$(".nopo").siblings(a).each(function(){$(this).remove()})}};
-var pSets = 'iframe.photoset';
-
-$.fn.photosetResize = function(f) {
+$.fn.photosetResize = function() {
     $(this).each(function(){
         var s = $('.entry').width();
         var r = $(this).attr('src').replace('500',s);
