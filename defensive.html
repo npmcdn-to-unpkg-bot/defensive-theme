@@ -16,14 +16,14 @@
       \__|_| |_|\___|_| |_| |_|\___||___/
 
       please do not steal, copy, plagerize, use as base code, distrubute or anything alike without written consent
-      defensive theme v1.9.3-47emojistatus:beta,nopostatus:beta
+      defensive theme v1.9.4-1emojistatus:beta,nopostatus:beta,photosetresize:trial?
       designed, built and maintained by alex rowrz
       http://rowrz.com/themes
       -->
-      <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-      <script>!window.jQuery && document.write(unescape('%3Cscript type="text/javascript" src="http://static.tumblr.com/4ra4qv5/23Cngfg0w/jquery.1.11.1.min.js"%3E%3C/script%3E'));</script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script>!window.jQuery && document.write(unescape('%3Cscript src="http://static.tumblr.com/4ra4qv5/23Cngfg0w/jquery.1.11.1.min.js"%3E%3C/script%3E'));</script>
       
-      <link rel="stylesheet" type="text/css" href="https://secure.static.tumblr.com/4ra4qv5/Zoundmipb/normalize.css">
+      <link rel="stylesheet" href="https://secure.static.tumblr.com/4ra4qv5/Zoundmipb/normalize.css">
       <script defer src="https://secure.static.tumblr.com/4ra4qv5/lihnfxm92/modernizr-2.6.2-respond-1.1.0.min.js"></script>
       
       {block:Description}
@@ -85,11 +85,11 @@
       <meta name="text:noPo" content="$().noPo('.x'); //change the 'x' to whatever you want the tag to be, remember to keep the '.'">
       {/block:hidden}
       
-      <script type="text/javascript" src="http://static.tumblr.com/4ra4qv5/2w8nilfms/assets.js"></script>
-      <link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/0K1nilfm0/addons.css">
+      <script src="http://static.tumblr.com/4ra4qv5/Asqnilsvy/assets.js"></script>
+      <link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/tMUnilnya/addons.css">
       <link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/gganilfl0/main.css">
 
-      <style type="text/css">
+      <style>
         a:hover{color:{color:LinkHover};}
 
         body {
@@ -139,7 +139,7 @@
     <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="left  {select:Layout}_col {block:IndexPage}index_page {/block:IndexPage} {block:ifBorders} borders {/block:ifBorders} {block:ifShowCaptions}captions-enabled {/block:ifShowCaptions} {block:PermalinkPage} perma_page active exposed {/block:PermalinkPage}">
+    <div id="contain" class="left  {select:Layout}_col {block:IndexPage}index_page {/block:IndexPage} {block:ifBorders} borders {/block:ifBorders} {block:ifShowCaptions}captions-enabled {/block:ifShowCaptions} {block:PermalinkPage} perma_page active exposed {/block:PermalinkPage}">
 
       <div class="sidebar">
         <div class="sideguts">
@@ -294,11 +294,9 @@
 
             {block:Photoset}
                 {block:IndexPage}
-                    <div class="photo photoset-index">
+                    <div class="photo photoset-index photoset">
 
-                    {block:Photos}
-                    <img src="{PhotoURL-HighRes}" width="{PhotoWidth-HighRes}"height="{PhotoHeight-HighRes}" />
-                    {/block:Photos}
+                    {Photoset-500}
 
                     {block:ifShowCaptions}{block:Caption}<div class="photo-caption clear">{Caption}</div>{/block:Caption}{/block:ifShowCaptions}
                     <div class="perma phtst-perma" style="margin-top:5px;">
@@ -496,53 +494,55 @@
                   ga('send', 'pageview');
                 </script>
     {/block:IfGoogleAnalyticsID}
-          
-    <script type="text/javascript" src="http://static.tumblr.com/4ra4qv5/RR2ndgj4l/imagesloaded.pkgd.min.js"></script>
-    <script type="text/javascript" src="http://static.tumblr.com/4ra4qv5/4TPne8je5/jquery.masonry.min.2.1.08.defensive.js"></script>
-    {block:ifInfiniteScroll}<script type="text/javascript" src="http://static.tumblr.com/4ra4qv5/8N8n57y0s/infinitescroll.min.js"></script>{/block:ifInfiniteScroll}
-     
-    <script type="text/javascript">
-            $(window).load(function () {
-                var $container = $('#posts');
-                $container.imagesLoaded(function(){
-                    $container.masonry({
-                        itemSelector : '#entry',
-                        isResizable: true
-                    });
-                });
-                // Infinite Scroll
-                {block:ifInfiniteScroll}
-                $('#posts').infinitescroll({
-                    navSelector  : '#page-nav',
-                    nextSelector : '#page-nav a',
-                    itemSelector : '#entry',
-                    loadingImg : null,
-                    loadingText : null,
-                    bufferPx : 100,
-                    extraScrollPx: 200,
-                    loading: {
-                        finishedMsg: null,
-                    }
-                },
-                // Infinite Scroll Callback
-                function( newElements ) {
-                    var $newElems = jQuery( newElements ).hide();
-                    $newElems.imagesLoaded(function(){
-                        $newElems.fadeIn();
-                        $container.masonry( 'appended', $newElems );
-                    });
-                });
-                {/block:ifInfiniteScroll}
+    
+    <script src="http://static.tumblr.com/4ra4qv5/0wmnilruc/imagesloaded.pkgd.min.3.1.8.defensive.js"></script>
+    <script src="http://static.tumblr.com/4ra4qv5/S5znilru8/masonry.pkgd.min.3.2.2.defensive.js"></script>
+    {block:ifInfiniteScroll}<script src="http://static.tumblr.com/4ra4qv5/vPknilqf6/jquery.infinitescroll.2.1.0.min.defensive.js"></script>{/block:ifInfiniteScroll}
+    <script>
+    var pContainer = $('#posts');
+    $(function() {
+        pContainer.imagesLoaded(function(){
+            pContainer.masonry({
+                itemSelector : '#entry',
+                isResizable: true,
+                isAnimated: !Modernizr.csstransitions,
+                animationOptions: {
+                    duration: 400,
+                    queue: false
+                }
             });
-    </script>
-    {block:ifEmojiSupportBETA}<link rel="stylesheet" href="https://secure.static.tumblr.com/4ra4qv5/VNPnfxjo0/minemoji.css"><script src="http://static.tumblr.com/4ra4qv5/R8Snfxiud/jminemoji.js"></script><script type="text/javascript">$(function(){$(".entrytext,.txttitle,.photo-caption,.question").minEmoji();});document.write('<style type="text/css">.em{zoom:'+parseInt($("body").css('font-size'))*6.25+'%;}</style>');</script>{/block:ifEmojiSupportBETA}
-    {block:ifnoPoBETA}<script type="text/javascript">
-    /*---remember to read the tutorial on how to setup the rest!----*/
-    /*tutorial can be found here: http://rowrz.com/post/103999179659/nopo-2-x-hide-specifically-tagged-posts*/
-    $(document).ready(function() {
-        {text:noPo}
+        });
+        {block:ifInfiniteScroll}
+        pContainer.infinitescroll({
+            navSelector  : '#page-nav',
+            nextSelector : '#page-nav a',
+            itemSelector : '#entry',
+            loadingImg : null,
+            loadingText : null,
+            bufferPx : 100,
+            extraScrollPx: 200,
+            loading: {
+                finishedMsg: null,
+            },
+        },
+        // Infinite Scroll Callback
+        function(n) {
+            $(n).find(pSets).photosetResize();
+            $(n).hide().imagesLoaded(function(){
+                pContainer.masonry( 'appended', $(n).show() );
+            });
+        });
+        {/block:ifInfiniteScroll}
     });
     </script>
+    
+    {block:ifEmojiSupportBETA}<link rel="stylesheet" href="https://secure.static.tumblr.com/4ra4qv5/VNPnfxjo0/minemoji.css"><script src="http://static.tumblr.com/4ra4qv5/R8Snfxiud/jminemoji.js"></script><script>$(function(){$(".entrytext,.txttitle,.photo-caption,.question").minEmoji();});document.write('<style>.em{zoom:'+parseInt($("body").css('font-size'))*6.25+'%;}</style>');</script>{/block:ifEmojiSupportBETA}
+    {block:ifnoPoBETA}<script>
+    /*---remember to read the tutorial on how to setup the rest!----*/
+    /*tutorial can be found here: http://rowrz.com/post/103999179659/nopo-2-x-hide-specifically-tagged-posts*/
+    $(function() { {text:noPo} });
+    </script>
     {/block:ifnoPoBETA}
+    
   </body>
 </html>
