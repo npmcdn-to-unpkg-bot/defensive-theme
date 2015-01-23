@@ -13,8 +13,8 @@ $.fn.photosetResize = function() {
 };
 $(function() {
 	$(pSets).photosetResize();
-	$("nav").append('<a target="_blank" class="nav" href="http://rowrz.cf/1ss0vPg">theme</a>');
-	$("body").prepend('<a id="install-btn" href="http://rowrz.cf/1zYUFdI" title="Install This Theme" target="_blank" style="opacity: 1;"><span id="install-btn-txt">Install Theme</span></a>');
+	$("nav").append('<a target="_blank" class="nav" href="http://rowrz.com/themes">theme</a>');
+	$("body").prepend('<a id="install-btn" href="https://tumblr.com/theme/38849" title="Install This Theme" target="_blank" style="opacity: 1;"><span id="install-btn-txt">Install Theme</span></a>');
 	setTimeout(function() {
 		$('#install-btn').animate({top: "3px"});
 	}, 1000);
