@@ -151,6 +151,10 @@ float:right;}
 
 /**variable based css**/
 
+.left.one_col.index_page > .posts{width:400px;}
+.left.two_col.index_page > .posts{width:620px;}
+.left.three_col.index_page > .posts{max-width:60%;}
+
 @media (max-width: 830px) {
 	.sidebar.index_page {
 		margin-left:-333px;
@@ -175,9 +179,7 @@ float:right;}
 }
 
 
-.left.one_col.index_page > .posts{width:400px;}
-.left.two_col.index_page > .posts{width:620px;}
-.left.three_col.index_page > .posts{max-width:62%;}
+
 
 .left.perma_page > .posts > .entry{width:400px; margin-left:40px;}
 .left.one_col.index_page > .posts > .entry{width:400px;}
@@ -200,7 +202,7 @@ height:200px;
 .left.one_col.index_page > .posts > .entry.video > embed,
 .left.one_col.index_page > .posts > .entry.video > object{
 width:400px;
-height:400px;
+min-height:400px;
 overflow: hidden;
 }
         
@@ -211,7 +213,7 @@ overflow: hidden;
 .left.three_col.index_page > .posts > .entry.video > embed,
 .left.three_col.index_page > .posts > .entry.video > object{
 width:200px;
-height:200px;
+min-height:200px;
 overflow: hidden;
 }
 /*end video player vars*/
