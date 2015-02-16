@@ -172,12 +172,9 @@ float:right;}
 	.left.index_page > .sidebar {
 		display:none;
 	}
-	.left.index_page > .sidebar {
-		margin-left:0px;
-	}
 }
 @media all and (max-width: 700px) {
-	.left.index_page > .sidebar {
+	.left.three_col.index_page > .sidebar {
 		margin-left:-200px;
 	}
 }
@@ -185,17 +182,17 @@ float:right;}
 	.left.three_col.index_page > .posts{
 		margin-left: -100px;
 	}
-	.left.index_page > .sidebar {
+	.left.three_col.index_page > .sidebar {
 		margin-left:-300px;
 	}
 }
 @media all and(max-width: 830px) {
-	.left.index_page > .sidebar {
+	.left.three_col.index_page > .sidebar {
 		margin-left:-333px;
 	}
 }
 @media all and (min-width: 1381px){
-    .left.index_page > .sidebar{
+    .left.three_col.index_page > .sidebar{
         margin-left: -600px;
     }
     .left.three_col.index_page > .posts{
@@ -203,7 +200,7 @@ float:right;}
     }
 }
 @media all and (min-width: 2300px){
-	.left.index_page > .sidebar{
+	.left.three_col.index_page > .sidebar{
 		margin-left:-1000px;
 	}
 	.left.three_col.index_page > .posts{
