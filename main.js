@@ -1,4 +1,4 @@
-$(function(){$(".entry-text,.post-title,.clear,.photo-caption,.question").minEmoji();});document.write('<style>.em{zoom:'+parseInt($("body").css('font-size'))*6.25+'%;}</style>');
+$(function(){$(".entry-text,.post-title,.clear,.photo-caption,.question").minEmoji();});
 /*!
  * imagesLoaded PACKAGED v3.1.8
  * JavaScript is all like "You images are done yet or what?"

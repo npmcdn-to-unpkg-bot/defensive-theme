@@ -402,8 +402,6 @@ line-height:1;
 /*question posts*/
 .answerer{margin-bottom:-5px;}
 
-div.bubble-answer > p {display: inline;}
-
 .bubble-answer,
 .bubble-question{border-radius:5px;
   padding:10px;
@@ -542,6 +540,7 @@ iframe#tumblr_controls{
 	display: inline-block;
 	*display: inline;
 	vertical-align:middle;
+	zoom: 1;
 }
 
 /* CSS for high-resolution devices (HiDPI), you can add this if you want it */
