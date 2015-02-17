@@ -8,7 +8,7 @@
       Blog Details: {Title} / {BlogURL} / {Host}
       Theme Details: Defensive Theme by rowrz/neutral
       By using this theme you agree to the terms at http://rowrz.com/themes
-      technical details: v1.9.5-21emojistatus:beta:enabledbydefault,photosetresize:trial?
+      technical details: v1.9.5-22emojistatus:beta:enabledbydefault,photosetresize:trial?
       -->
       {block:Description}
                   <meta name="description" content="{MetaDescription}" />
@@ -171,7 +171,7 @@
                     <a class="nav" href="{URL}" title="{Label}">{Label}</a>
                     {/block:Pages}
                 {/block:HasPages}
-                <a class="nav" href="/archive" title="Archive">Archive</a>
+                <a class="nav" href="/archive" title="{lang:Archive}">{lang:Archive}e</a>
             </nav>
         </div>
         {block:ifDescPagination}
@@ -192,13 +192,13 @@
                       <div class="buttons-pagination">
                           {block:PreviousPage}
                           <span class="prev-nav-button">
-                                <a href="{PreviousPage}">&#8592; Previous | </a>
+                                <a href="{PreviousPage}">&#8592; {lang:Previous} | </a>
                           </span>
                           {/block:PreviousPage}
 
                           {block:NextPage}
                           <span class="next-nav-button">
-                                <a href="{NextPage}">Next &#8594;</a>
+                                <a href="{NextPage}">{lang:Next} &#8594;</a>
                           </span>
                           {/block:NextPage}
                       </div>
@@ -209,11 +209,11 @@
                 {block:PermalinkPagination}
                     <div class="perm-pagination">
                         {block:PreviousPost}
-                            <a href="{PreviousPost}">&#8592; Last Post</a>
+                            <a href="{PreviousPost}">&#8592; {lang:Previous post}</a>
                         {/block:PreviousPost}
 
                         {block:NextPost}
-                            <a href="{NextPost}">| Next Post &#8594;</a>
+                            <a href="{NextPost}">| {lang:Next post} &#8594;</a>
                         {/block:NextPost}
                     </div>
                 {/block:PermalinkPagination}
@@ -421,7 +421,7 @@
             {block:Pagination}
                 <div id="pagination" class="post-bottom-pagination">
                 {block:PreviousPage}<span class="prev-nav-button">
-                            <a href="{PreviousPage}">&#8592; Previous | </a></span>
+                            <a href="{PreviousPage}">&#8592;{lang:Previous} | </a></span>
                       {/block:PreviousPage}
                       {block:JumpPagination length="5"}
                             {block:CurrentPage}
@@ -434,7 +434,7 @@
                       {/block:JumpPagination}
                       <span class="next-nav-button">
                       {block:NextPage}
-                            <a href="{NextPage}"> | Next &#8594;</a>
+                            <a href="{NextPage}"> | {lang:Next} &#8594;</a>
                       {/block:NextPage}</span>
                 </div>
              {/block:Pagination}
@@ -443,11 +443,11 @@
              {block:PermalinkPagination}
                     <div id="pagination" class="perm-bottom-pagination">
                         {block:PreviousPost}
-                            <a href="{PreviousPost}">&#8592; Last Post</a>
+                            <a href="{PreviousPost}">&#8592; {lang:Previous post}</a>
                         {/block:PreviousPost}
 
                         {block:NextPost}
-                            <a href="{NextPost}">| Next Post &#8594;</a>
+                            <a href="{NextPost}">| {lang:Next post} &#8594;</a>
                         {/block:NextPost}
                     </div>
                 {/block:PermalinkPagination}
