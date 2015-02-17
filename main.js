@@ -1,4 +1,4 @@
-$(function(){$(".entry-text,.post-title,.clear,.photo-caption,.question").minEmoji();});
+$(function(){$(".entry-text,.post-title,.clear,.photo-caption,.question,.answer,.answer-replies,.bubble-answer").minEmoji();});
 /*!
  * imagesLoaded PACKAGED v3.1.8
  * JavaScript is all like "You images are done yet or what?"
