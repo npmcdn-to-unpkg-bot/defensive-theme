@@ -8,7 +8,7 @@
       Blog Details: {Title} / {BlogURL} / {Host}
       Theme Details: Defensive Theme by rowrz/neutral
       By using this theme you agree to the terms at http://rowrz.com/themes
-      technical details: v1.9.5-18emojistatus:beta:enabledbydefault,photosetresize:trial?
+      technical details: v1.9.5-21emojistatus:beta:enabledbydefault,photosetresize:trial?
       -->
       {block:Description}
                   <meta name="description" content="{MetaDescription}" />
@@ -68,7 +68,7 @@
       <meta name="text:Google analytics ID" content="">
       {/block:hidden}
       
-      <link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/eSbnjxc2j/main_min.css">
+      <link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/7BAnjxhzf/main_min.css">
       
       <style>
         a:hover{color:{color:LinkHover};}
@@ -126,7 +126,7 @@
 
             {block:ifShowTitleOnBlog}
                 {block:ShowTitle}
-                    <div class="side-title"><a href="/">{Title}</a></div>
+                    <div class="side-title em-fl"><a href="/">{Title}</a></div>
                 {/block:ShowTitle}
             {/block:ifShowTitleOnBlog}
             {block:ShowAvatar}
@@ -225,8 +225,8 @@
         {block:Posts}
             <div id="entry" class="entry post {select:Layout}_col {block:IndexPage}index_page {/block:IndexPage}{block:PermalinkPage} perma_page {/block:PermalinkPage} {block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Panorama}panorama {/block:Panorama}{block:Photo}photo {/block:Photo}{block:Quote}quote {/block:Quote}{block:Audio}audio {/block:Audio}{block:Video}video{/block:Video} {block:ifInfiniteScroll}infinite{/block:ifInfiniteScroll}">
                 {block:Text}
-                    {block:Title}<div class="post-title">{Title}</div>{/block:Title}
-                    <div class="entry-text clear">{Body}</div>
+                    {block:Title}<div class="post-title em-fl">{Title}</div>{/block:Title}
+                    <div class="entry-text  em-fl">{Body}</div>
                     {block:IndexPage}
                     <div class="perma text">
                       <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
@@ -236,8 +236,8 @@
                 {/block:Text}
     
                 {block:Link}
-                    <a href="{URL}" class="title">{Name}</a>
-                    {block:Description}{Description}{/block:Description}
+                    <a href="{URL}" class="title em-fl">{Name}</a>
+                    {block:Description}<div class="link-description em-fl">{Description}</div>{/block:Description}
                     {block:IndexPage}
                     <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
                     <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
@@ -248,7 +248,7 @@
                     {block:IndexPage}
                         <div class="photo">
                             <a href="{Permalink}"><img class="photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/></a>
-                            {block:ifShowCaptions}{block:Caption}<div class="photo-caption clear">{Caption}</div>{/block:Caption}{/block:ifShowCaptions}
+                            {block:ifShowCaptions}{block:Caption}<div class="photo-caption  em-fl">{Caption}</div>{/block:Caption}{/block:ifShowCaptions}
                             <div class="perma">
                                 <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
                                 <div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div></div>
@@ -260,7 +260,7 @@
                 {block:Panorama}
                     {block:IndexPage}
                         {LinkOpenTag}<img class="pano" src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>{LinkCloseTag}
-                        {block:ifShowCaptions}{block:Caption}<div class="photo-caption clear">{Caption}</div>{/block:Caption}{/block:ifShowCaptions}
+                        {block:ifShowCaptions}{block:Caption}<div class="photo-caption  em-fl">{Caption}</div>{/block:Caption}{/block:ifShowCaptions}
                     <div class="perma">
                         <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
                         <div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
@@ -278,7 +278,7 @@
     
                         {Photoset-500}
     
-                        {block:ifShowCaptions}{block:Caption}<div class="photo-caption clear">{Caption}</div>{/block:Caption}{/block:ifShowCaptions}
+                        {block:ifShowCaptions}{block:Caption}<div class="photo-caption  em-fl">{Caption}</div>{/block:Caption}{/block:ifShowCaptions}
                         <div class="perma phtst-perma" style="margin-top:5px;">
                             <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
                             <div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div></div>
@@ -291,7 +291,7 @@
     
     
                 {block:Quote}
-                        <span class="quote quote-body">
+                        <span class="quote quote-body em-fl">
                             <blockquote class="{Length}">{Quote}</blockquote>
                         </span>
                     {block:Source}
@@ -301,7 +301,7 @@
                                     <td class="quote_source_mdash">
                                      —&nbsp;
                                     </td>
-                                    <td class="quote_source">{Source}</td>
+                                    <td class="quote_source em-fl">{Source}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -315,8 +315,8 @@
                 {/block:Quote}
     
                 {block:Chat}
-                    {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
-                    <ul class="conversation">
+                    {block:Title}<h2 class="post-title em-fl"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                    <ul class="conversation em-fl">
                         {block:Lines}
                             <li class="chat-{Alt} chat">{block:Label}<span class="label">{Label}</span>{/block:Label} {Line}</li>
                         {/block:Lines}
@@ -347,7 +347,7 @@
                         {block:AudioEmbed}
                             <div class="audio-embed {select:Layout}">{AudioEmbed-400}</div>
                         {/block:AudioEmbed}
-                        {block:ifShowCaptions}<div class="audio-caption clear">{block:Caption}{Caption}{/block:Caption}</div>{/block:ifShowCaptions}
+                        {block:ifShowCaptions}<div class="audio-caption  em-fl">{block:Caption}{Caption}{/block:Caption}</div>{/block:ifShowCaptions}
                         <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
                         <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
                     {/block:IndexPage}
@@ -359,7 +359,7 @@
                 {block:Video}
                     {block:IndexPage}
                         {VideoEmbed-400}
-                        {block:ifShowCaptions}<div class="video-caption clear">{block:Caption}{Caption}{/block:Caption}</div>{/block:ifShowCaptions}
+                        {block:ifShowCaptions}<div class="video-caption  em-fl">{block:Caption}{Caption}{/block:Caption}</div>{/block:ifShowCaptions}
                         <div style="padding-top:5px"></div>
                         <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
                         <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
@@ -372,25 +372,25 @@
     
                 {block:Answer}
                     <div class="question">
-                        <div class="bubble-question">
+                        <div class="bubble-question em-fl">
                             <b>{Asker}</b>: {Question}
                         </div>
                     </div>
                     {block:Answerer}
-                        <div class="answer">
+                        <div class="answer em-fl">
                             <p><div class="bubble-answer"><b>{Answerer}</b>: {Answer}</div></p>
                         </div>
                     {/block:Answerer}
     
-                    <div class="replies answer-replies">
+                    <div class="replies answer-replies em-fl">
                         {Replies}
                     </div>
                     {block:IndexPage}
                         <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
                         <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
                     {/block:IndexPage}
-    
                 {/block:Answer}
+                
                 {block:PermalinkPage}
                     <div class="post-notes">
                         {block:Caption}
@@ -470,6 +470,6 @@
     <script>!window.jQuery && document.write(unescape('%3Cscript src="http://static.tumblr.com/4ra4qv5/ieJnjdd8t/jquery-1.11.2.min.js"%3E%3C/script%3E'));</script>
     
     <script src="http://static.tumblr.com/4ra4qv5/GLVnjiuhn/jminemoji.min.js"></script>
-    <script src="http://static.tumblr.com/4ra4qv5/1XGnjxgpw/main_min.js"></script>
+    <script src="http://static.tumblr.com/4ra4qv5/rj3njxhzb/main_min.js"></script>
   </body>
 </html>
