@@ -267,7 +267,7 @@ float:right;}
 
 
 
-.entry.perma_page{width:400px; margin-left:40px;}
+.entry.perma_page{width:400px; margin-left:40px; position: relative !important;}
 .entry.one_col.index_page{width:400px;}
 .entry.two_col.index_page,
 .entry.three_col.index_page{width:200px;}
