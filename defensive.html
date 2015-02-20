@@ -8,7 +8,7 @@
       Blog Details: {Title} / {BlogURL} / {Host}
       Theme Details: Defensive Theme
       By using this theme you agree to the terms at http://rowrz.com/themes
-      technical details: v1.9.6-1:noporeadded,beta:emojistatus:enabledbydefault:photosetresize:rc
+      technical details: v1.9.6-2:noporeadded,beta:emojistatus:enabledbydefault:photosetresize:rc
       credit: rowrz/neutral http://rowrz.com
       -->
       {block:Description}
@@ -399,20 +399,23 @@
                             {Caption}
                         {/block:Caption}
                         {block:NoteCount}
-                            <a title="Reblog with {NoteCountWithLabel}" target="_blank" href="{ReblogURL}">{NoteCountWithLabel}</a>,&nbsp;
+                            <span class="note-count"><a {Target} href="{ReblogURL}">{NoteCountWithLabel}</a>,</span>
                         {/block:NoteCount}
                         {block:ContentSource}
-                        Src: <a target="_blank" title="{SourceTitle}" href="{SourceURL}">{SourceTitle}</a>,&nbsp;
+                            <span class="content-source">{Lang:Source}: <a {Target} title="{SourceTitle}" href="{SourceURL}">{SourceTitle}</a>,</span>
                         {/block:ContentSource}
                         {block:RebloggedFrom}
-                            Via: <a target="_blank" title="Reblog from {ReblogParentName}" href="{ReblogParentURL}">{ReblogParentName}</a>&nbsp;
-                        {/block:RebloggedFrom}{block:NoteCount}
-                        {block:NotReblog}Posted: {/block:NotReblog}{/block:NoteCount}{TimeAgo}{block:HasTags},&nbsp;tagged:&nbsp;
-                                {block:Tags}
-                                    <a href="{TagURL}"> #{Tag}</a>
-                                {/block:Tags}
-                            {/block:hasTags}
+                            <span class="reblogged-from"><a {Target} href="{ReblogParentURL}">{lang:Reblogged TimeAgo from ReblogParentName}</a>,</span>
+                        {/block:RebloggedFrom}
+                        {block:NotReblog}
+                            {block:Date}
+                                <span class="not-reblog">{lang:Posted TimeAgo},</span>
+                            {/block:Date}
+                        {/block:NotReblog}
+                        {block:HasTags}{lang:Tags}: {block:Tags}<a href="{TagURL}"> #{Tag}</a>{/block:Tags}{/block:HasTags}
+                        {block:NoteCount}
                             {PostNotes}
+                        {/block:NoteCount}
                     </div>
                 {/block:PermalinkPage}
             </div>
