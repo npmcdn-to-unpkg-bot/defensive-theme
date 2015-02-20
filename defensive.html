@@ -11,63 +11,60 @@
       technical details: v1.9.6-2:noporeadded,beta:emojistatus:enabledbydefault:photosetresize:rc
       credit: rowrz/neutral http://rowrz.com
       -->
-      {block:Description}
-                  <meta name="description" content="{MetaDescription}" />
-      {/block:Description}
-
-      <link rel="shortcut icon" href="{Favicon}">
-      <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
-
       {MobileAppHeaders}
 
       <title>{block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{block:PermalinkPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{/block:PermalinkPage}{Title} | {Name}</title>
-      <link rel="shortcut icon" href="{Favicon}">
+
+      {block:Description}
+        <meta name="description" content="{MetaDescription}" />
+      {/block:Description}
       
       <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}" />
+      <link rel="shortcut icon" href="{Favicon}">
+      <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       
       {block:Hidden}
+        <meta name="color:Background" content="#252525">
+        <meta name="color:Text" content="#000">
+        <meta name="color:Link" content="#000">
+        <meta name="color:Accents" content="#EEE">
+        <meta name="color:LinkHover" content="#888">
+        <meta name="color:Entry Background" content="#FFF">
+        <meta name="color:Borders" content="#000">
+        <meta name="color:Pagination" content="#FFF">
 
-      <meta name="color:Background" content="#252525">
-      <meta name="color:Text" content="#000">
-      <meta name="color:Link" content="#000">
-      <meta name="color:Accents" content="#EEE">
-      <meta name="color:LinkHover" content="#888">
-      <meta name="color:Entry Background" content="#FFF">
-      <meta name="color:Borders" content="#000">
-      <meta name="color:Pagination" content="#FFF">
+        <meta name="image:Background" content="">
 
-      <meta name="image:Background" content="">
+        <meta name="if:Show Title On Blog" content="1">
+        <meta name="if:Borders" content="0">
+        <meta name="if:Show Captions" content="0">
+        <meta name="if:Infinite Scroll" content="0">
+        <meta name="if:Desc Pagination" content="1">
+        <meta name="if:Permalink Pagination" content="1">
+        <meta name="if:Description Underline" content="1">
 
-      <meta name="if:Show Title On Blog" content="1">
-      <meta name="if:Borders" content="0">
-      <meta name="if:Show Captions" content="0">
-      <meta name="if:Infinite Scroll" content="0">
-      <meta name="if:Desc Pagination" content="1">
-      <meta name="if:Permalink Pagination" content="1">
-      <meta name="if:Description Underline" content="1">
+        <meta name="select:Layout" content="one" title="One Column">
+        <meta name="select:Layout" content="two" title="Two Columns">
+        <meta name="select:Layout" content="three" title="Auto Columns">
 
-      <meta name="select:Layout" content="one" title="One Column">
-      <meta name="select:Layout" content="two" title="Two Columns">
-      <meta name="select:Layout" content="three" title="Auto Columns">
-
-      <meta name="text:Font Size" content="12px">
-      <meta name="text:Side Font Size" content="12px">
-      <meta name="text:Home Title" content="Home" >
-      <meta name="text:Link One" content="">
-      <meta name="text:Link One Title" content="">
-      <meta name="text:Link Two" content="">
-      <meta name="text:Link Two Title" content="">
-      <meta name="text:Link Three" content="">
-      <meta name="text:Link Three Title" content="">
-      <meta name="text:Link Four" content="">
-      <meta name="text:Link Four Title" content="">
-      <meta name="text:Link Five" content="">
-      <meta name="text:Link Five Title" content="">
-      <meta name="text:Google analytics ID" content="">
-      <meta name="text:noPo Tag" content="">
+        <meta name="text:Font Size" content="12px">
+        <meta name="text:Side Font Size" content="12px">
+        <meta name="text:Home Title" content="Home" >
+        <meta name="text:Link One" content="">
+        <meta name="text:Link One Title" content="">
+        <meta name="text:Link Two" content="">
+        <meta name="text:Link Two Title" content="">
+        <meta name="text:Link Three" content="">
+        <meta name="text:Link Three Title" content="">
+        <meta name="text:Link Four" content="">
+        <meta name="text:Link Four Title" content="">
+        <meta name="text:Link Five" content="">
+        <meta name="text:Link Five Title" content="">
+        <meta name="text:Google analytics ID" content="">
+        <meta name="text:noPo Tag" content="">
       {/block:Hidden}
       
       <link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/P4xnjzbjy/main_min.css">
