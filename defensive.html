@@ -395,21 +395,7 @@
                         {block:Caption}
                             {Caption}
                         {/block:Caption}
-                        {block:NoteCount}
-                            <span class="note-count"><a {Target} href="{ReblogURL}">{NoteCountWithLabel}</a>,</span>
-                        {/block:NoteCount}
-                        {block:ContentSource}
-                            <span class="content-source">{Lang:Source}: <a {Target} title="{SourceTitle}" href="{SourceURL}">{SourceTitle}</a>,</span>
-                        {/block:ContentSource}
-                        {block:RebloggedFrom}
-                            <span class="reblogged-from"><a {Target} href="{ReblogParentURL}">{lang:Reblogged TimeAgo from ReblogParentName}</a>,</span>
-                        {/block:RebloggedFrom}
-                        {block:NotReblog}
-                            {block:Date}
-                                <span class="not-reblog">{lang:Posted TimeAgo},</span>
-                            {/block:Date}
-                        {/block:NotReblog}
-                        {block:HasTags}{lang:Tags}: {block:Tags}<a href="{TagURL}"> #{Tag}</a>{/block:Tags}{/block:HasTags}
+                        {block:NoteCount}<span class="note-count"><a {Target} href="{ReblogURL}">{NoteCountWithLabel}</a>, </span>{/block:NoteCount}{block:ContentSource}<span class="content-source">{Lang:Source}: <a {Target} title="{SourceTitle}" href="{SourceURL}">{SourceTitle}</a>, </span>{/block:ContentSource}{block:RebloggedFrom}<span class="reblogged-from">{lang:Reblogged from ReblogParentName 2}</span>{/block:RebloggedFrom}{block:NotReblog}{block:Date}<span class="not-reblog">{lang:Posted TimeAgo}</span>{/block:Date}{/block:NotReblog}{block:HasTags}, {lang:Tags}: {block:Tags}<a href="{TagURL}"> #{Tag}</a>{/block:Tags}{/block:HasTags}
                         {block:NoteCount}
                             {PostNotes}
                         {/block:NoteCount}
