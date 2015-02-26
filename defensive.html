@@ -8,7 +8,7 @@
       Blog Details: {Title} / {BlogURL} / {Host}
       Theme Details: Defensive Theme
       By using this theme you agree to the terms at http://rowrz.com/themes
-      technical details: v1.9.6-5:noporeadded,beta:emojistatus:enabledbydefault:photosetresize:rc
+      technical details: v1.9.6-9:noporeadded,beta:emojistatus:enabledbydefault:photosetresize:rc
       credit: rowrz/neutral http://rowrz.com
       -->
       {MobileAppHeaders}
@@ -171,7 +171,7 @@
                     <a class="nav" href="{URL}" title="{Label}">{Label}</a>
                     {/block:Pages}
                 {/block:HasPages}
-                <a class="nav" href="/archive" title="{lang:Archive}">{lang:Archive}e</a>
+                <a class="nav" href="/archive" title="{lang:Archive}">{lang:Archive}</a>
             </nav>
         </div>
         {block:ifDescPagination}
@@ -226,22 +226,13 @@
             <div id="entry" class="entry post {select:Layout}_col {block:IndexPage}index_page {/block:IndexPage}{block:PermalinkPage} perma_page {/block:PermalinkPage} {block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Panorama}panorama {/block:Panorama}{block:Photo}photo {/block:Photo}{block:Quote}quote {/block:Quote}{block:Audio}audio {/block:Audio}{block:Video}video{/block:Video} {block:ifInfiniteScroll}infinite{/block:ifInfiniteScroll} postid-{PostID} {block:ifnoPoTag}nopo-enabled{/block:ifnoPoTag}"{block:ifnoPoTag}{block:IndexPage} data-nopo-tags=" {TagsAsClasses}"{/block:IndexPage}{/block:ifnoPoTag}>
                 {block:Text}
                     {block:Title}<div class="post-title em-fl">{Title}</div>{/block:Title}
-                    <div class="entry-text  em-fl">{Body}</div>
-                    {block:IndexPage}
-                    <div class="perma text">
-                      <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-                      <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
-                    </div>
-                    {/block:IndexPage}
+                    <div class="entry-text em-fl">{Body}</div>
                 {/block:Text}
     
                 {block:Link}
                     <a href="{URL}" class="title em-fl">{Name}</a>
                     {block:Description}<div class="link-description em-fl">{Description}</div>{/block:Description}
-                    {block:IndexPage}
-                    <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-                    <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
-                    {/block:IndexPage}
+
                 {block:Link}
     
                 {block:Photo}
@@ -249,9 +240,6 @@
                         <div class="photo">
                             <a href="{Permalink}"><img class="photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/></a>
                             {block:ifShowCaptions}{block:Caption}<div class="photo-caption  em-fl">{Caption}</div>{/block:Caption}{/block:ifShowCaptions}
-                            <div class="perma">
-                                <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-                                <div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div></div>
                         </div>
                     {/block:IndexPage}
                     {block:PermalinkPage}{LinkOpenTag}<img class="photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="400"/>{LinkCloseTag}{/block:PermalinkPage}
@@ -261,10 +249,6 @@
                     {block:IndexPage}
                         {LinkOpenTag}<img class="pano" src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>{LinkCloseTag}
                         {block:ifShowCaptions}{block:Caption}<div class="photo-caption  em-fl">{Caption}</div>{/block:Caption}{/block:ifShowCaptions}
-                    <div class="perma">
-                        <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-                        <div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
-                    </div>
                     {/block:IndexPage}
                     {block:PermalinkPage}
                         {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"  width="400"/>{LinkCloseTag}
@@ -278,10 +262,7 @@
     
                         {Photoset-500}
     
-                        {block:ifShowCaptions}{block:Caption}<div class="photo-caption  em-fl">{Caption}</div>{/block:Caption}{/block:ifShowCaptions}
-                        <div class="perma phtst-perma" style="margin-top:5px;">
-                            <div class="perma1"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-                            <div class="perma2"><a href="{ReblogURL}" target="_blank">rblg</a></div></div>
+                        {block:ifShowCaptions}{block:Caption}<div class="photo-caption em-fl">{Caption}</div>{/block:Caption}{/block:ifShowCaptions}
                         </div>
                     {/block:IndexPage}
                     {block:PermalinkPage}
@@ -306,12 +287,6 @@
                             </tbody>
                         </table>
                     {/block:Source}
-                        {block:IndexPage}
-                            <div class="perma quote text">
-                                <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-                                <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
-                            </div>
-                        {/block:IndexPage}
                 {/block:Quote}
     
                 {block:Chat}
@@ -321,10 +296,6 @@
                             <li class="chat-{Alt} chat">{block:Label}<span class="label">{Label}</span>{/block:Label} {Line}</li>
                         {/block:Lines}
                     </ul>
-                    {block:IndexPage}
-                        <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-                        <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
-                    {/block:IndexPage}
                 {/block:Chat}
     
                 {block:Audio}
@@ -347,9 +318,7 @@
                         {block:AudioEmbed}
                             <div class="audio-embed {select:Layout}">{AudioEmbed-400}</div>
                         {/block:AudioEmbed}
-                        {block:ifShowCaptions}<div class="audio-caption  em-fl">{block:Caption}{Caption}{/block:Caption}</div>{/block:ifShowCaptions}
-                        <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-                        <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
+                        {block:ifShowCaptions}<div class="audio-caption em-fl">{block:Caption}{Caption}{/block:Caption}</div>{/block:ifShowCaptions}
                     {/block:IndexPage}
                     {block:PermalinkPage}
                         <div class="audio-embed-perma">{AudioEmbed-400}</div>
@@ -359,10 +328,8 @@
                 {block:Video}
                     {block:IndexPage}
                         {VideoEmbed-400}
-                        {block:ifShowCaptions}<div class="video-caption  em-fl">{block:Caption}{Caption}{/block:Caption}</div>{/block:ifShowCaptions}
+                        {block:ifShowCaptions}<div class="video-caption em-fl">{block:Caption}{Caption}{/block:Caption}</div>{/block:ifShowCaptions}
                         <div style="padding-top:5px"></div>
-                        <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-                        <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
                     {/block:IndexPage}
                     {block:PermalinkPage}
                         <div class="post video" style="margin-bottom:5px;">{VideoEmbed-400}</div>
@@ -385,12 +352,13 @@
                     <div class="replies answer-replies em-fl">
                         {Replies}
                     </div>
-                    {block:IndexPage}
-                        <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-                        <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
-                    {/block:IndexPage}
                 {/block:Answer}
                 
+                {block:IndexPage}
+                    <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
+                    <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
+                {/block:IndexPage}
+
                 {block:PermalinkPage}
                     <div class="post-notes">
                         {block:Caption}
