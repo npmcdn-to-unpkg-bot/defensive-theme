@@ -8,7 +8,7 @@
       Blog Details: {Title} / {BlogURL} / {Host}
       Theme Details: Defensive Theme
       By using this theme you agree to the terms at http://rowrz.com/themes
-      technical details: v1.9.6-9:noporeadded,beta:emojistatus:enabledbydefault:photosetresize:rc
+      technical details: v1.9.6-13:noporeadded,beta:emojistatus:em-fl,enabledbydefault,tags,titles,span:photosetresize:rc
       credit: rowrz/neutral http://rowrz.com
       -->
       {MobileAppHeaders}
@@ -67,7 +67,7 @@
         <meta name="text:noPo Tag" content="">
       {/block:Hidden}
       
-      <link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/P4xnjzbjy/main_min.css">
+      <link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/VOXnklrm5/main_min.css">
       
       <style>
         a:hover{color:{color:LinkHover};}
@@ -126,7 +126,7 @@
 
             {block:ifShowTitleOnBlog}
                 {block:ShowTitle}
-                    <div class="side-title em-fl"><a href="/">{Title}</a></div>
+                    <div class="side-title"><a href="/"><span class="em-fl">{Title}</span></a></div>
                 {/block:ShowTitle}
             {/block:ifShowTitleOnBlog}
             {block:ShowAvatar}
@@ -318,7 +318,7 @@
                         {block:AudioEmbed}
                             <div class="audio-embed {select:Layout}">{AudioEmbed-400}</div>
                         {/block:AudioEmbed}
-                        {block:ifShowCaptions}<div class="audio-caption em-fl">{block:Caption}{Caption}{/block:Caption}</div>{/block:ifShowCaptions}
+                        {block:ifShowCaptions}<div class="audio-caption">{block:Caption}<span class="em-fl">{Caption}</span>{/block:Caption}</div>{/block:ifShowCaptions}
                     {/block:IndexPage}
                     {block:PermalinkPage}
                         <div class="audio-embed-perma">{AudioEmbed-400}</div>
@@ -328,7 +328,7 @@
                 {block:Video}
                     {block:IndexPage}
                         {VideoEmbed-400}
-                        {block:ifShowCaptions}<div class="video-caption em-fl">{block:Caption}{Caption}{/block:Caption}</div>{/block:ifShowCaptions}
+                        {block:ifShowCaptions}<div class="video-caption">{block:Caption}<span class="em-fl">{Caption}</span>{/block:Caption}</div>{/block:ifShowCaptions}
                         <div style="padding-top:5px"></div>
                     {/block:IndexPage}
                     {block:PermalinkPage}
@@ -339,18 +339,18 @@
     
                 {block:Answer}
                     <div class="question">
-                        <div class="bubble-question em-fl">
-                            <b>{Asker}</b>: {Question}
+                        <div class="bubble-question">
+                            <b>{Asker}</b>: <span class="em-fl">{Question}</span>
                         </div>
                     </div>
                     {block:Answerer}
-                        <div class="answer em-fl">
-                            <p><div class="bubble-answer"><b>{Answerer}</b>: {Answer}</div></p>
+                        <div class="answer">
+                            <p><div class="bubble-answer"><b>{Answerer}</b>: <span class="em-fl">{Answer}</span></div></p>
                         </div>
                     {/block:Answerer}
     
-                    <div class="replies answer-replies em-fl">
-                        {Replies}
+                    <div class="replies answer-replies">
+                        <span class="em-fl">{Replies}</span>
                     </div>
                 {/block:Answer}
                 
@@ -364,7 +364,7 @@
                         {block:Caption}
                             {Caption}
                         {/block:Caption}
-                        {block:NoteCount}<span class="note-count"><a {Target} href="{ReblogURL}">{NoteCountWithLabel}</a>, </span>{/block:NoteCount}{block:ContentSource}<span class="content-source">{Lang:Source}: <a {Target} title="{SourceTitle}" href="{SourceURL}">{SourceTitle}</a>, </span>{/block:ContentSource}{block:RebloggedFrom}<span class="reblogged-from">{lang:Reblogged from ReblogParentName 2}</span>{/block:RebloggedFrom}{block:NotReblog}{block:Date}<span class="not-reblog">{lang:Posted TimeAgo}</span>{/block:Date}{/block:NotReblog}{block:HasTags}, {lang:Tags}: {block:Tags}<a href="{TagURL}"> #{Tag}</a>{/block:Tags}{/block:HasTags}
+                        {block:NoteCount}<span class="note-count"><a {Target} href="{ReblogURL}">{NoteCountWithLabel}</a>, </span>{/block:NoteCount}{block:ContentSource}<span class="content-source">{Lang:Source}: <a {Target} title="{SourceTitle}" href="{SourceURL}">{SourceTitle}</a>, </span>{/block:ContentSource}{block:RebloggedFrom}<span class="reblogged-from">{lang:Reblogged from ReblogParentName 2}</span>{/block:RebloggedFrom}{block:NotReblog}{block:Date}<span class="not-reblog">{lang:Posted TimeAgo}</span>{/block:Date}{/block:NotReblog}{block:HasTags}, {lang:Tags}: {block:Tags}<a href="{TagURL}"> #<span class="tag-em em-fl">{Tag}</span></a>{/block:Tags}{/block:HasTags}
                         {block:NoteCount}
                             {PostNotes}
                         {/block:NoteCount}
@@ -412,22 +412,21 @@
       {/block:ifnotDescPagination}
     </div>
     {block:ifInfiniteScroll}{block:Pagination}{block:NextPage}<div id="page-nav"><a href="{NextPage}"></a></div>{/block:NextPage}{/block:Pagination}{/block:ifInfiniteScroll}
-    {block:IfGoogleAnalyticsID}
-                <script>
-                  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-                  ga('create', '{text:Google Analytics ID}', 'tumblr.com');
-                  ga('send', 'pageview');
-                </script>
-    {/block:IfGoogleAnalyticsID}
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="http://static.tumblr.com/4ra4qv5/ieJnjdd8t/jquery-1.11.2.min.js"%3E%3C/script%3E'));</script>
     
-    <script src="http://static.tumblr.com/4ra4qv5/GLVnjiuhn/jminemoji.min.js"></script>
-    <script src="http://static.tumblr.com/4ra4qv5/nc8nk100j/main_min.js"></script>
+    <script src="http://static.tumblr.com/4ra4qv5/o53nklrmj/main_min.js"></script>
     
+    {block:IfGoogleAnalyticsID}
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', '{text:Google Analytics ID}', 'tumblr.com');
+      ga('send', 'pageview');
+    </script>
+    {/block:IfGoogleAnalyticsID}
   </body>
 </html>
