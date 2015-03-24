@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
       <!--
       Blog Details: {Title} / {BlogURL} / {Host}
       Theme Details: Defensive Theme
       By using this theme you agree to the terms at http://rowrz.com/themes
-      technical details: v1.9.6-17:noporeadded,beta:emojistatus:em-fl,enabledbydefault,tags,titles,span:photosetresize:rc
+      technical details: v1.9.6-20:noporeadded,beta:emojistatus:em-fl,enabledbydefault,tags,titles,span:photosetresize:rc
       credit: rowrz/neutral http://rowrz.com
       -->
       {MobileAppHeaders}
@@ -31,7 +31,6 @@
         <meta name="color:Text" content="#000">
         <meta name="color:Link" content="#000">
         <meta name="color:Accents" content="#EEE">
-        <meta name="color:LinkHover" content="#888">
         <meta name="color:Entry Background" content="#FFF">
         <meta name="color:Borders" content="#000">
         <meta name="color:Pagination" content="#FFF">
@@ -64,10 +63,9 @@
         <meta name="text:noPo Tag" content="">
       {/block:Hidden}
 
-      <link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/6Z0nldnye/main_min.css">
+      <link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/hJfnlpz2d/main_min.css">
 
       <style>
-        a:hover{color:{color:LinkHover};}
 
         body {
             background-image:url('{image:Background}');
@@ -79,16 +77,16 @@
 
         #pagination,
         #pagination span,
-        #pagination span > a,
+        #pagination span a,
         a.jump_page,
-        .perm-pagination > a,
-        .perm-bottom-pagination>a{color:{color:Pagination};}
+        .perm-pagination a,
+        .perm-bottom-pagination a{color:{color:Pagination};}
 
         .sidebar .sideguts,
         .entry{background-color:{color:Entry Background};}
 
-        .left.borders > .sidebar .sideguts,
-        .left.borders > .posts > .entry{border:1px solid {color:Borders};}
+        .borders .sidebar .sideguts,
+        .borders .entry{border:1px solid {color:Borders};}
 
         .side-title{
             color:{TitleColor};
