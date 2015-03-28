@@ -68,6 +68,14 @@ transition: all 0.3s ease-in-out;
 .photo-caption {margin-bottom:1em;}
 .post-notes img{width:auto;}
 
+figure.photo{
+            margin: 0;
+        }
+
+.photo img {
+  width: 100%;
+}
+
 #entry .photo.captions-enabled > p {margin-top: -2px;}
 
 /*navigation*/
@@ -121,18 +129,26 @@ text-transform: uppercase;
 
 .perma1, .perma2, .perm, .perm2{
   font-family:silkscreen,courier,monospace,arial;
-  font-size:90%;}
+  font-size:90%; margin: 4px 0 0;
+}
 
 .perm{display: block;
-font-size:90%;
+font-size: 11px;
 text-transform:uppercase;
 float:left;
 }
 
 .perm2 {display: block;
-font-size:90%;
+font-size: 11px;
 text-transform:uppercase;
 float:right;}
+
+.has-tags .perm, .has-tags .perm2{float: none;}
+
+.has-tags .index-tags{
+	display: block;
+	float: right;
+}
 
 .captions-enabled.one-col.panorama .perma {margin-top:10px;}
 
@@ -387,13 +403,21 @@ line-height:1;
   font-weight: 400;
   font-size: 20px;
 }
-#entry blockquote {
-    margin: 0;
+.post-content blockquote {
+    margin: 1em 0;
     padding-left: 10px;}
 
 .text p{text-align:left;}
-.text p:first-child{
-	margin-top: 0em;
+
+.post-content{
+	line-height: 1.6em;
+}
+.post-content .title+.body-text{margin-top: 1em;}
+.post-content p {
+  margin: 0;
+}
+.post-content a{
+	word-wrap: break-word;
 }
 .post blockquote{
   border-left: 3px solid #eee;
@@ -419,7 +443,6 @@ line-height:1;
   border-left:none !important;
   line-height: 1.3;
   margin: 0;
-  padding: 0 5px 0 0;
   quotes: "\201C""\201D""\2018""\2019";
   word-break: break-word;}
 .quote > blockquote:before {content: open-quote;}

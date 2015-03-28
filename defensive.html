@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
   <head>
       <!--
       Blog Details: {Title} / {BlogURL} / {Host}
       Theme Details: Defensive Theme
       By using this theme you agree to the terms at http://rowrz.com/themes
-      technical details: v1.9.6-20:noporeadded,beta:emojistatus:em-fl,enabledbydefault,tags,titles,span:photosetresize:rc
+      technical details: v1.9.6-30:noporeadded,beta:emojistatus:em-fl,enabledbydefault,tags,titles,span:photosetresize:rc
       credit: rowrz/neutral http://rowrz.com
       -->
       {MobileAppHeaders}
@@ -31,6 +31,7 @@
         <meta name="color:Text" content="#000">
         <meta name="color:Link" content="#000">
         <meta name="color:Accents" content="#EEE">
+        <meta name="color:LinkHover" content="#888">
         <meta name="color:Entry Background" content="#FFF">
         <meta name="color:Borders" content="#000">
         <meta name="color:Pagination" content="#FFF">
@@ -63,9 +64,10 @@
         <meta name="text:noPo Tag" content="">
       {/block:Hidden}
 
-      <link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/hJfnlpz2d/main_min.css">
+      <link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/MoEnlxke7/main.css">
 
       <style>
+        a:hover{color:{color:LinkHover};}
 
         body {
             background-image:url('{image:Background}');
@@ -77,16 +79,16 @@
 
         #pagination,
         #pagination span,
-        #pagination span a,
+        #pagination span > a,
         a.jump_page,
-        .perm-pagination a,
-        .perm-bottom-pagination a{color:{color:Pagination};}
+        .perm-pagination > a,
+        .perm-bottom-pagination>a{color:{color:Pagination};}
 
         .sidebar .sideguts,
         .entry{background-color:{color:Entry Background};}
 
-        .borders .sidebar .sideguts,
-        .borders .entry{border:1px solid {color:Borders};}
+        .left.borders > .sidebar .sideguts,
+        .left.borders > .posts > .entry{border:1px solid {color:Borders};}
 
         .side-title{
             color:{TitleColor};
@@ -211,9 +213,15 @@
     <div id="posts" class="posts" {block:ifnoPoTag}{block:IndexPage}data-nopo-selector="{text:noPo Tag}"{/block:IndexPage}{/block:ifnoPoTag}>
         {block:Posts}
             <div id="entry" class="entry post {select:Layout}_col {block:IndexPage}index_page {/block:IndexPage}{block:PermalinkPage} perma_page {/block:PermalinkPage} {block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Panorama}panorama {/block:Panorama}{block:Photo}photo {/block:Photo}{block:Quote}quote {/block:Quote}{block:Audio}audio {/block:Audio}{block:Video}video{/block:Video} {block:ifInfiniteScroll}infinite{/block:ifInfiniteScroll} postid-{PostID} {block:ifnoPoTag}{block:IndexPage}nopo-enabled{block:IndexPage}{/block:ifnoPoTag}"{block:ifnoPoTag}{block:IndexPage} data-nopo-tags=" {TagsAsClasses} "{/block:IndexPage}{/block:ifnoPoTag}>
-	            {block:Text}
-                    {block:Title}<div class="post-title em-fl">{Title}</div>{/block:Title}
-                    <div class="entry-text em-fl">{Body}</div>
+                {block:Text}
+                <div class="post-content">
+                    {block:Title}<h2 class="em-fl post-title"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                    {block:Body}
+                    <div class="em-fl body-text">
+                        {Body}
+                    </div>
+                    {/block:Body}
+                </div>
                 {/block:Text}
 
                 {block:Link}
@@ -223,38 +231,30 @@
                 {block:Link}
 
                 {block:Photo}
-                    {block:IndexPage}
-                        <div class="photo">
-                            <a href="{Permalink}"><img class="photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/></a>
-                            {block:ifShowCaptions}{block:Caption}<div class="photo-caption  em-fl">{Caption}</div>{/block:Caption}{/block:ifShowCaptions}
-                        </div>
-                    {/block:IndexPage}
-                    {block:PermalinkPage}{LinkOpenTag}<img class="photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="400"/>{LinkCloseTag}{/block:PermalinkPage}
+                    <figure class="photo">
+                        {LinkOpenTag}<img class="photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}
+                        {block:ifShowCaptions}{block:Caption}
+                        <figcaption class="photo-caption em-fl post-content">{Caption}</figcaption>
+                        {/block:Caption}{/block:ifShowCaptions}
+                    </figure>
                 {/block:Photo}
 
                 {block:Panorama}
-                    {block:IndexPage}
-                        {LinkOpenTag}<img class="pano" src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>{LinkCloseTag}
-                        {block:ifShowCaptions}{block:Caption}<div class="photo-caption  em-fl">{Caption}</div>{/block:Caption}{/block:ifShowCaptions}
-                    {/block:IndexPage}
-                    {block:PermalinkPage}
-                        {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"  width="400"/>{LinkCloseTag}
-                    {/block:PermalinkPage}
+                    <figure class="photo">
+                        {LinkOpenTag}<img class="photo" src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>{LinkCloseTag}
+                        {block:ifShowCaptions}{block:Caption}
+                        <figcaption class="photo-caption em-fl post-content">{Caption}</figcaption>
+                        {/block:Caption}{/block:ifShowCaptions}
+                    </figure>
                 {/block:Panorama}
 
-
                 {block:Photoset}
-                    {block:IndexPage}
-                        <div class="photo photoset-index photoset">
-
-                        {Photoset-500}
-
-                        {block:ifShowCaptions}{block:Caption}<div class="photo-caption em-fl">{Caption}</div>{/block:Caption}{/block:ifShowCaptions}
-                        </div>
-                    {/block:IndexPage}
-                    {block:PermalinkPage}
-                        {Photoset-500}
-                    {/block:PermalinkPage}
+                    <figure class="photo {block:IndexPage}photoset-index{/block:IndexPage} photoset">
+                        {LinkOpenTag}{Photoset-500}{LinkCloseTag}
+                        {block:ifShowCaptions}{block:Caption}
+                        <figcaption class="photo-caption em-fl post-content">{Caption}</figcaption>
+                        {/block:Caption}{/block:ifShowCaptions}
+                    </figure>
                 {/block:Photoset}
 
 
@@ -342,8 +342,11 @@
                 {/block:Answer}
 
                 {block:IndexPage}
-                    <div class="perm"><a href="{Permalink}" target="_blank">{NoteCount}</a></div>
-                    <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
+                    <section class="index-post-info {block:HasTags}has-tags{/block:HasTags}">
+                        <div class="perm"><a href="{Permalink}" target="_blank">{lang:TimeAgo with NoteCount notes}</a></div>
+                        <div class="perm2"><a href="{ReblogURL}" target="_blank">rblg</a></div>
+                        {block:HasTags}<span class="index-tags">{block:Tags}<a href="{TagURL}"> #<span class="tag-em em-fl">{Tag}</span></a>{/block:Tags}</span>{/block:HasTags}
+                    </section>
                 {/block:IndexPage}
 
                 {block:PermalinkPage}
@@ -401,7 +404,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="http://static.tumblr.com/4ra4qv5/ieJnjdd8t/jquery-1.11.2.min.js"%3E%3C/script%3E'));</script>
 
-    <script src="http://static.tumblr.com/4ra4qv5/miWnkmaq3/main_min.js"></script>
+    <script src="http://static.tumblr.com/4ra4qv5/bLTnlvv3r/main_min.js"></script>
 
     {block:IfGoogleAnalyticsID}
     <script>

@@ -57,7 +57,7 @@ $(function() {
     
 	if (nopoEnabled) {
 
-		var nopoTag = $.grep($('#posts').data('nopo-selector'), function(n) {
+		var nopoTag = $.grep($('#posts').data('nopo-selector').split(" "), function(n) {
 			return (n)
 		});
 
@@ -83,7 +83,9 @@ $(function() {
 			    if ($.inArray(tagName, cleanedData) > -1) {
 			        $(this).remove();
 			    }*/
-			    $(this).runNopo(tagName);
+			    for (i in tagName){
+					$(this).runNopo(tagName[i]);
+				}
 			})
 	    }
 		
