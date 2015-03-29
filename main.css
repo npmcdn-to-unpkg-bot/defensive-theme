@@ -417,9 +417,7 @@ line-height:1;
 	line-height: 1.6em;
 }
 .post-content .title+.body-text{margin-top: 1em;}
-.post-content p {
-  margin: 0;
-}
+
 .post-content a{
 	word-wrap: break-word;
 }
