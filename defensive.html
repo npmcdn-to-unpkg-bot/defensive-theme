@@ -8,7 +8,7 @@
       Blog Details: {Title} / {BlogURL} / {Host}
       Theme Details: Defensive Theme
       By using this theme you agree to the terms at http://rowrz.com/themes
-      technical details: v1.9.6-30:noporeadded,beta:emojistatus:em-fl,enabledbydefault,tags,titles,span:photosetresize:rc
+      technical details: v1.9.6-40:noporeadded,beta:emojistatus:em-fl,enabledbydefault,tags,titles,span:photosetresize:rc
       credit: rowrz/neutral http://rowrz.com
       -->
       {MobileAppHeaders}
@@ -64,7 +64,7 @@
         <meta name="text:noPo Tag" content="">
       {/block:Hidden}
 
-      <link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/MoEnlxke7/main.css">
+      <link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/vtTnlxkgr/main_min.css">
 
       <style>
         a:hover{color:{color:LinkHover};}
@@ -110,7 +110,7 @@
     <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div id="contain" class="left  {select:Layout}_col {block:IndexPage}index_page {/block:IndexPage} {block:ifBorders} borders {/block:ifBorders} {block:ifShowCaptions}captions-enabled {/block:ifShowCaptions} {block:PermalinkPage} perma_page {/block:PermalinkPage}">
+    <div id="contain" class="left  {select:Layout}_col {block:IndexPage}index_page {/block:IndexPage} {block:ifBorders} borders {/block:ifBorders} {block:ifShowCaptions}captions-enabled {/block:ifShowCaptions} {block:ifnotShowCaptions}captions-disabled {/block:ifnotShowCaptions} {block:PermalinkPage} perma_page {/block:PermalinkPage}">
 
       <div class="sidebar">
         <div class="sideguts">
@@ -228,33 +228,31 @@
                     <a href="{URL}" class="title em-fl">{Name}</a>
                     {block:Description}<div class="link-description em-fl">{Description}</div>{/block:Description}
 
-                {block:Link}
+                {/block:Link}
 
                 {block:Photo}
-                    <figure class="photo">
+                    <div class="photo">
                         {LinkOpenTag}<img class="photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}
-                        {block:ifShowCaptions}{block:Caption}
-                        <figcaption class="photo-caption em-fl post-content">{Caption}</figcaption>
-                        {/block:Caption}{/block:ifShowCaptions}
-                    </figure>
+                        {block:Caption}
+                        <div class="photo-caption em-fl">{Caption}</div>
+                        {/block:Caption}
+                    </div>
                 {/block:Photo}
 
                 {block:Panorama}
-                    <figure class="photo">
-                        {LinkOpenTag}<img class="photo" src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>{LinkCloseTag}
-                        {block:ifShowCaptions}{block:Caption}
-                        <figcaption class="photo-caption em-fl post-content">{Caption}</figcaption>
-                        {/block:Caption}{/block:ifShowCaptions}
-                    </figure>
+                    {LinkOpenTag}<img class="pano" src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>{LinkCloseTag}
+                    {block:Caption}
+                    <div class="photo-caption em-fl">{Caption}</div>
+                    {/block:Caption}
                 {/block:Panorama}
 
                 {block:Photoset}
-                    <figure class="photo {block:IndexPage}photoset-index{/block:IndexPage} photoset">
+                    <div class="photo photoset-index photoset">
                         {LinkOpenTag}{Photoset-500}{LinkCloseTag}
-                        {block:ifShowCaptions}{block:Caption}
-                        <figcaption class="photo-caption em-fl post-content">{Caption}</figcaption>
-                        {/block:Caption}{/block:ifShowCaptions}
-                    </figure>
+                        {block:Caption}
+                        <div class="photo-caption em-fl">{Caption}</div>
+                        {/block:Caption}
+                    </div>
                 {/block:Photoset}
 
 
@@ -351,9 +349,6 @@
 
                 {block:PermalinkPage}
                     <div class="post-notes">
-                        {block:Caption}
-                            {Caption}
-                        {/block:Caption}
                         {block:NoteCount}<span class="note-count"><a {Target} href="{ReblogURL}">{NoteCountWithLabel}</a>, </span>{/block:NoteCount}{block:ContentSource}<span class="content-source">{Lang:Source}: <a {Target} title="{SourceTitle}" href="{SourceURL}">{SourceTitle}</a>, </span>{/block:ContentSource}{block:RebloggedFrom}<span class="reblogged-from">{lang:Reblogged from ReblogParentName 2}</span>{/block:RebloggedFrom}{block:NotReblog}{block:Date}<span class="not-reblog">{lang:Posted TimeAgo}</span>{/block:Date}{/block:NotReblog}{block:HasTags}, {lang:Tags}: {block:Tags}<a href="{TagURL}"> #<span class="tag-em em-fl">{Tag}</span></a>{/block:Tags}{/block:HasTags}
                         {block:NoteCount}
                             {PostNotes}
@@ -404,7 +399,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>!window.jQuery && document.write(unescape('%3Cscript src="http://static.tumblr.com/4ra4qv5/ieJnjdd8t/jquery-1.11.2.min.js"%3E%3C/script%3E'));</script>
 
-    <script src="http://static.tumblr.com/4ra4qv5/bLTnlvv3r/main_min.js"></script>
+    <script src="http://static.tumblr.com/4ra4qv5/QFxnlzka6/main_min.js"></script>
 
     {block:IfGoogleAnalyticsID}
     <script>

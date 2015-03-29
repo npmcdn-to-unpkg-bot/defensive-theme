@@ -90,7 +90,7 @@ $(function() {
 	    }
 		
 		$(function() {
-			$('.nopo-enabled').noPo(nopoTag[0]); 
+			$('.nopo-enabled').noPo(nopoTag); 
 	    });
     }
 
@@ -139,7 +139,7 @@ $(function() {
 	                });*/
 	                
 	                nopoEnabled && $(n).each(function() {
-	                	$(this).runNopo(nopoTag[0]);
+	                	$(this).runNopo(nopoTag);
 	                });
 	                
 	                postsContainer.masonry('appended', $(n), true);
