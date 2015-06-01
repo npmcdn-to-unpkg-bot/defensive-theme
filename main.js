@@ -45,7 +45,7 @@ $(function() {
 	
 	$.fn.photosetResize = function() {
 	    $(this).each(function(){
-	        var newSize = $('.posts').width();
+	        var newSize = $('#entry').width();
 	        var newSrc = $(this).attr('src').replace( '500' , newSize);
 	        $(this).attr('src', newSrc).width(newSize);
 	        var high = $(this).css('height');

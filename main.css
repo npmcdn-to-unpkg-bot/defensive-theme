@@ -54,6 +54,7 @@ font-family:'trebuchet ms', arial, sans-serif;
 -ms-transition: all 0.3s ease-in-out;
 -o-transition: all 0.3s ease-in-out;
 transition: all 0.3s ease-in-out;
+word-wrap:break-word;
 }
 
 #entry .photo{margin-bottom:5px;
