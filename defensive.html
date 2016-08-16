@@ -8,7 +8,7 @@
       Blog Details: {Title} / {BlogURL} / {Host}
       Theme Details: Defensive Theme
       By using this theme you agree to the terms at http://rowrz.com/themes
-      technical details: v1.9.6-50:noporeadded,beta:emojistatus:em-fl,enabledbydefault,tags,titles,span:photosetresize:pc
+      technical details: v1.9.6-51:noporeadded,beta:emojistatus:em-fl,enabledbydefault,tags,titles-broken,span,ios-8half:photosetresize:pc
       credit: rowrz/neutral http://rowrz.com
       -->
       {MobileAppHeaders}
@@ -64,7 +64,7 @@
         <meta name="text:noPo Tag" content="">
       {/block:Hidden}
 
-      <link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/yyXnlzljm/main_min.css">
+      <link rel="stylesheet" href="http://static.tumblr.com/4ra4qv5/ZBynr5ao5/main_min.css">
 
       <!--[if lt IE 9]>
         <script src="http://static.tumblr.com/hriofhd/Qj0m8pn7q/html5shiv.js"></script>
@@ -105,6 +105,8 @@
         pre,
         .bubble-question,
         .bubble-answer{background-color:{color:Accents};}
+
+        .tmblr-iframe{margin-right:103px;}
         {CustomCSS}
       </style>
 
@@ -400,10 +402,151 @@
     </div>
     {block:ifInfiniteScroll}{block:Pagination}{block:NextPage}<div id="page-nav"><a href="{NextPage}"></a></div>{/block:NextPage}{/block:Pagination}{/block:ifInfiniteScroll}
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>!window.jQuery && document.write(unescape('%3Cscript src="http://static.tumblr.com/4ra4qv5/ieJnjdd8t/jquery-1.11.2.min.js"%3E%3C/script%3E'));</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>!window.jQuery && document.write(unescape('%3Cscript src="http://static.tumblr.com/4ra4qv5/ta3oc0eli/jquery-1.12.4.min.js%3E%3C/script%3E'));</script>
 
-    <script src="http://static.tumblr.com/4ra4qv5/VJ2np8xmf/main_min.js"></script>
+
+    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+
+    <script src="https://npmcdn.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
+
+    <script src="http://static.tumblr.com/4ra4qv5/dgMoc0epu/defensive.infinitescroll.custom.2.1.0.js"></script>
+
+    <script>
+    /*************/
+$(function() {
+
+	$("nav").append(decodeURIComponent('%3Ca%20target%3D%22_blank%22%20class%3D%22nav%22%20href%3D%22http%3A%2F%2Frowrz.com%2Fthemes%22%3Etheme%3C%2Fa%3E'));
+
+	$("body").prepend(decodeURIComponent('%3Ca%20id%3D%22install-btn%22%20href%3D%22https%3A%2F%2Ftumblr.com%2Ftheme%2F38849%22%20title%3D%22Install%20This%20Theme%22%20target%3D%22_blank%22%20style%3D%22opacity%3A%201%3B%22%3E%3Cspan%20id%3D%22install-btn-txt%22%3EInstall%20Theme%3C%2Fspan%3E%3C%2Fa%3E'));
+
+	setTimeout(function() {
+		$('#install-btn').animate({top: "3px"});
+	}, 1000);
+
+	//todo make it object oriented, remove repeated calls to the same element (define thing once and call that variable), just clean stuff up and make it simpler
+	//todo split each actual piece of code apart, nopo, photoset resize, the buttons, etc.
+	//todo get rid of all the crap^ that this file is littered with (split into seperate <script async> links, idk what 16 year old me was thinking >.<
+
+	var nopoEnabled = $('.entry').hasClass('nopo-enabled') && /\S/.test($('#posts').data('nopo-selector')) && window.location.pathname.split('/')[1] != 'tagged'; //checking if nopo is enabled
+
+	var photoSets = 'iframe.photoset';
+
+	$.fn.photosetResize = function() {
+	    $(this).each(function(){
+	        var newSize = $('#entry').width();
+	        var newSrc = $(this).attr('src').replace( '500' , newSize);
+	        $(this).attr('src', newSrc).width(newSize);
+	        var high = $(this).css('height');
+	        var calculate = parseInt(high, 10) * newSize / 500;
+	        $(this).css('height', calculate);
+	    });
+	    return this;
+	};
+
+	if (nopoEnabled) {
+
+		var nopoTag = $.grep($('#posts').data('nopo-selector').split(" "), function(n) { //this gives us a variable with our posts with the tags in them
+			return (n)
+		});
+
+		$.fn.runNopo = function(tagName){ //nopo code
+		    //$.inArray(tagName, $.grep($(this).data('nopo-tags').split(" "), function(n) {return (n)})) > -1 && $(this).remove();
+		    var dataNew = $(this).data('nopo-tags'); //this is what we are looking to remove
+		    var splitNew = dataNew.split(" "); //this is just doing some cleaning
+		    var cleanedNew = $.grep(splitNew, function(n) { //more cleaning
+				return (n)
+			});
+			if ($.inArray(tagName, cleanedNew) > -1) { //this is where we actually remove the post
+				$(this).remove();
+			}
+			return this;
+		}
+
+		$.fn.noPo = function(tagName) { //main nopo function
+			$(this).siblings().each(function() { //goes through siblings
+			    /*var data = $(this).data('nopo-tags');
+			    var splitData = data.split(" ");
+			    var cleanedData = $.grep(data, function(n) {
+			        return (n)
+			    });
+			    if ($.inArray(tagName, cleanedData) > -1) {
+			        $(this).remove();
+			    }*/
+			    for (i in tagName){ //goes through the tags and runs the actual nopo code
+					$(this).runNopo(tagName[i]); //probably can change this so it isnt calling a function each loop through the sibiling
+				}
+			})
+	    }
+
+		$(function() {
+			$('.nopo-enabled').noPo(nopoTag);
+	    });
+    }
+
+	var postsContainer = $('#posts');
+
+	$(photoSets).photosetResize();
+
+    postsContainer.imagesLoaded(function() {
+        postsContainer.masonry({
+            itemSelector: '#entry',
+            isResizable: true
+        })
+    });
+
+    if (defensiveInfiniteScroll) {
+        postsContainer.infinitescroll({
+                navSelector: '#page-nav',
+                nextSelector: '#page-nav a',
+                itemSelector: '#entry',
+                loadingImg: '',
+                loadingText: '',
+                bufferPx: 100,
+                extraScrollPx: 200,
+                loading: {
+                    finishedMsg: ''
+                }
+            },
+            function (n) {
+	            $(n).hide();
+
+	            $(n).find(photoSets).photosetResize();
+
+	            $(n).imagesLoaded(function () {
+
+	                $(n).fadeIn();
+
+	                /*$(n).each(function() {
+	                    //$(this).noPo('x');
+	                    console.log($(this).data('nopo-tags'));
+	                    var dataNew = $(this).data('nopo-tags');
+	                    var splitNew = dataNew.split(" ");
+	                    var cleanedNew = $.grep(splitNew, function(n) {
+							return (n)
+						});
+						$.inArray('x', cleanedNew) > -1 && $(this).remove();
+	                });*/
+
+	                nopoEnabled && $(n).each(function() {
+	                	$(this).runNopo(nopoTag);
+	                });
+
+	                postsContainer.masonry('appended', $(n), true);
+	            });
+			});
+            /*function(n) {
+                $(n).find(pSets).photosetResize();
+                $(n).hide().imagesLoaded(function() {
+	                if(runNopo){
+	                	pContainer.noPo(nopoTag[0]);
+	                }
+                    pContainer.masonry('appended', $(n).show());
+                })
+            }
+        )*/
+    }
+});</script>
 
     {block:IfGoogleAnalyticsID}
     <script>
