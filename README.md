@@ -1,5 +1,5 @@
 # defensive-theme
-Defensive Theme by rowrz/neutral themes
+Defensive Theme by agoodkind themes
 
 This is an extremely simple theme with tons of options to configure
 
@@ -13,4 +13,15 @@ This is an extremely simple theme with tons of options to configure
 - *BETA* support for emoji's
 
 
-Theme support: [alex@rowrz.com](mailto:alex@rowrz.com)
+Theme support: [alex@galex.me](mailto:alex@galex.me)
+
+TODO:
+
+- make JS object oriented, remove repeated calls to the same element
+(define thing once and call that variable), just clean stuff up and
+- make code simpler
+- split each actual piece of JS code apart, nopo, photoset resize,
+the buttons, etc.
+- add new tumblr code features, support ads (??)
+- get rid of emojis? (most browsers/platforms support them natively now)
+- more stuff!
